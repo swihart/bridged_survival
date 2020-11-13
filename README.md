@@ -1,11 +1,5 @@
 ---
 title: "Supplementary Materials to Swihart & Bandyopadhyay (2020)"
-output: 
-  html_document: 
-    keep_md: yes
-    self_contained: yes
-editor_options: 
-  chunk_output_type: console
 ---
 
 
