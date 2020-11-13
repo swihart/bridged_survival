@@ -3,6 +3,7 @@ title: "Supplementary Materials to Swihart & Bandyopadhyay (2020)"
 output: 
   html_document: 
     keep_md: yes
+    self_contained: yes
 editor_options: 
   chunk_output_type: console
 ---
@@ -17,14 +18,6 @@ editor_options:
 
 ```r
 start_time <- Sys.time()
-start_time
-```
-
-```
-## [1] "2020-11-13 15:40:07 EST"
-```
-
-```r
 cphz_recomega <- parfm(Surv(time, status) ~
                                diabetes_yn_10 +
                                tobacco_use_yn_10 +
@@ -40,54 +33,22 @@ cphz_recomega <- parfm(Surv(time, status) ~
                              dist="weibull", 
                              frailty="possta")
 end_time <- Sys.time()
-end_time - start_time
-```
-
-```
-## Time difference of 13.66609 secs
-```
-
-```r
-cphz_recomega
-```
-
-```
-## 
-## Frailty distribution: positive stable 
-## Baseline hazard distribution: Weibull 
-## Loglikelihood: -100.568 
-## 
-##                   ESTIMATE SE    p-val    
-## nu                 0.281   0.139          
-## rho                0.780   0.128          
-## lambda             0.010   0.008          
-## diabetes_yn_10     1.683   0.970 0.083 .  
-## tobacco_use_yn_10  0.117   0.758 0.878    
-## male_yn_10        -0.311   0.865 0.719    
-## age_stdzd         -0.932   0.554 0.093 .  
-## bop_stdzd         -0.074   0.196 0.705    
-## plaque_stdzd      -0.382   0.375 0.309    
-## calmean_stdzd      0.323   0.241 0.18     
-## crown_yn_10        2.024   0.502 <.001 ***
-## molar_yn_10        0.049   0.428 0.909    
-## ---
-## Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-## Kendall's Tau: 0.281
+cphz_recomega_time <- end_time - start_time
+## put parfm results in 95% CI format
+parfm_results <-
+data.frame(value=cphz_recomega[,1], 
+           low95=cphz_recomega[,1]-1.96*cphz_recomega[,2], 
+           upp95=cphz_recomega[,1]+1.96*cphz_recomega[,2],
+           loglik=sprintf("%.10f",attr(cphz_recomega, "loglik"))
+           )
 ```
 ## Conditional Proportional Hazards (Stirling-Static in R)
 
 
 ```r
 start_time <- Sys.time()
-start_time
-```
 
-```
-## [1] "2020-11-13 15:40:21 EST"
-```
 
-```r
 integral_term <- function(sum_status,a,s){
   
   n <- sum_status
@@ -153,10 +114,7 @@ already_marg_like3 <- function(parms){
   beta07   <- parms[10];
   beta08   <- parms[11];
   beta09   <- parms[12];
-  # beta10   <- parms[13];
-  # beta11   <- parms[14];
-  # beta12   <- parms[15];
-
+  
 nll <- 
   -sum(
     log(
@@ -201,84 +159,114 @@ nll
 
 start_parms_val <- c(0.5, 1, 0.10, rep(0.1, 9))
 
-## check
-options(digits=10)
-already_marg_like3(start_parms_val)
-```
-
-```
-## [1] 205.3008739
-```
-
-```r
-sprintf("%.10f",sum(round(already_marg_like3(start_parms_val),6)))
-```
-
-```
-## [1] "205.3008740000"
-```
-
-```r
 cphz_stirling <-
 optim(start_parms_val,
       already_marg_like3,
       method="L-BFGS-B",
       
-      lower=c(0.1,0.1, -7, rep(-2, 9)),  ## COND  PH lower bounds     
-      upper=c(0.9,2.0,  3, rep( 2, 9)),  ## COND  PH upper bounds     
+      lower=c(0.1,0.1, -7, rep(-3, 9)),  ## COND  PH lower bounds     
+      upper=c(0.9,2.0,  3, rep( 3, 9)),  ## COND  PH upper bounds     
 
       hessian=TRUE,
       control=list(factr=10^3.9))
-sprintf("%.10f", -cphz_stirling$value)
-```
 
-```
-## [1] "-100.5687669536"
-```
+#sprintf("%.10f", -cphz_stirling$value)
+#sprintf("%.10f",attr(cphz_recomega, "loglik"))
 
-```r
-sprintf("%.10f",attr(cphz_recomega, "loglik"))
-```
-
-```
-## [1] "-100.5676297313"
-```
-
-```r
 ## YES!
 fit<-cphz_stirling
 fisher_info <- solve(fit$hessian)
-## fisher_info <- solve(numDeriv::hessian(already_marg_like3, start_parms_val))
 prop_sigma<-matrix(sqrt(diag(fisher_info)))
 upper<-fit$par+1.96*prop_sigma
 lower<-fit$par-1.96*prop_sigma
-already_marg_results <-data.frame(value=fit$par, low95=lower, upp95=upper, loglik=sprintf("%.10f", -cphz_stirling$value))
+cphz_stirling_results <-data.frame(value=fit$par, low95=lower, upp95=upper, loglik=sprintf("%.10f", -cphz_stirling$value))
 
+row.names(cphz_stirling_results) <- row.names(parfm_results)
+rownames(cphz_stirling_results)[1] <- "alpha = (1-nu)"
+rownames(cphz_stirling_results)[3] <- "log(lambda)"
 
 end_time <- Sys.time()
-end_time - start_time
+cphz_stirling_time <- end_time - start_time
 ```
 
-```
-## Time difference of 3.427079916 secs
-```
+## Compare the two closed forms:
+
+  * Conditional Proportional Hazards - Recursive-$\Omega$ time: 13.49 seconds
+  * Conditional Proportional Hazards - Static-Stirling time: 3.62 seconds
+  
+  Static-Stirling is faster.  Also provided the same likelihood:
+  
+  * Conditional Proportional Hazards - Recursive-$\Omega$ likelihood: -100.5676297313 
+  * Conditional Proportional Hazards - Static-Stirling likelihood: -100.5676297294
+  
+  The estimates and 95%CI are very similar as well:
+  
+  * Conditional Proportional Hazards - Recursive-$\Omega$ estimates:
+  
 
 ```r
-already_marg_results
+  print(parfm_results[-1*c(1,2,3),-4], digits = 3)
 ```
 
 ```
-##             value         low95         upp95          loglik
-## 1   0.71986189194  0.4467264901  0.9929972938 -100.5687669536
-## 2   0.77861422170  0.5276528288  1.0295756146 -100.5687669536
-## 3  -4.60660146137 -6.3386601423 -2.8745427804 -100.5687669536
-## 4   1.67900411129 -0.2215122959  3.5795205185 -100.5687669536
-## 5   0.11438015551 -1.3973475389  1.6261078499 -100.5687669536
-## 6  -0.31615173219 -2.0231166199  1.3908131555 -100.5687669536
-## 7  -0.92629800188 -2.0113584405  0.1587624367 -100.5687669536
-## 8  -0.07229727216 -0.4582825747  0.3136880304 -100.5687669536
-## 9  -0.38552047236 -1.1192340618  0.3481931170 -100.5687669536
-## 10  0.32181271163 -0.1498420200  0.7934674433 -100.5687669536
-## 11  2.00000000000  1.0071528217  2.9928471783 -100.5687669536
-## 12  0.05107990299 -0.7905180585  0.8926778645 -100.5687669536
+##                     value  low95 upp95
+## diabetes_yn_10     1.6826 -0.218 3.583
+## tobacco_use_yn_10  0.1168 -1.370 1.603
+## male_yn_10        -0.3110 -2.006 1.384
+## age_stdzd         -0.9324 -2.019 0.154
+## bop_stdzd         -0.0743 -0.459 0.310
+## plaque_stdzd      -0.3815 -1.116 0.353
+## calmean_stdzd      0.3230 -0.149 0.795
+## crown_yn_10        2.0242  1.040 3.008
+## molar_yn_10        0.0492 -0.790 0.889
+```
+  
+  * Conditional Proportional Hazards - Static-Stirling estimates:
+
+
+```r
+  print(cphz_stirling_results[-1*c(1,2,3),-4], digits=3)  
+```
+
+```
+##                     value  low95 upp95
+## diabetes_yn_10     1.6826 -0.221 3.586
+## tobacco_use_yn_10  0.1168 -1.397 1.630
+## male_yn_10        -0.3110 -2.020 1.398
+## age_stdzd         -0.9324 -2.019 0.154
+## bop_stdzd         -0.0743 -0.460 0.312
+## plaque_stdzd      -0.3815 -1.116 0.353
+## calmean_stdzd      0.3230 -0.150 0.796
+## crown_yn_10        2.0242  1.029 3.019
+## molar_yn_10        0.0492 -0.793 0.891
+```
+
+You'll note that the first three rows are omitted.  They are the same, but displayed in different ways.  `parfm` is parameterized as `nu` which equals Kendall's Tau which is 1-alpha in the Static Stirling formulation.  Also, `parfm` gives lambda, whereas Static-Stirling give log(lambda):
+
+  * Conditional Proportional Hazards - Recursive-$\Omega$ estimates:
+  
+
+```r
+  print(parfm_results[1*c(1,2,3),-4], digits = 3)
+```
+
+```
+##          value    low95  upp95
+## nu     0.28082  0.00879 0.5529
+## rho    0.77964  0.52919 1.0301
+## lambda 0.00981 -0.00615 0.0258
+```
+  
+  * Conditional Proportional Hazards - Static-Stirling estimates:
+
+
+```r
+  print(cphz_stirling_results[1*c(1,2,3),-4], digits=3)  
+```
+
+```
+##                 value  low95  upp95
+## alpha = (1-nu)  0.719  0.446  0.992
+## rho             0.780  0.529  1.031
+## log(lambda)    -4.624 -6.360 -2.888
 ```
