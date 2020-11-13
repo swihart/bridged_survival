@@ -1,6 +1,6 @@
----
-title: "Supplementary Materials to Swihart & Bandyopadhyay (2020)"
----
+
+# Supplementary Materials to Swihart & Bandyopadhyay (2020)
+
 
 
 
