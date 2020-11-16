@@ -38,60 +38,8 @@ data.frame(value=cphz_recomega[,1],
 
 ``` r
 start_time <- Sys.time()
-
-
-integral_term <- function(sum_status,a,s){
-  
-  n <- sum_status
-  
-  sa <- s^a
-  esa <- exp(-sa)
-  terms <- NULL
-  
-    offset_1 <- sum_status+1
-    switch(offset_1,
-           
-           exp(-s^a),
-           
-           integral_term_0001(esa,sa,s,a),
-           integral_term_0002(esa,sa,s,a),
-           integral_term_0003(esa,sa,s,a),
-           integral_term_0004(esa,sa,s,a),
-           integral_term_0005(esa,sa,s,a),
-           integral_term_0006(esa,sa,s,a),
-           integral_term_0007(esa,sa,s,a),
-           integral_term_0008(esa,sa,s,a),
-           integral_term_0009(esa,sa,s,a),
-
-           integral_term_0010(esa,sa,s,a),
-           integral_term_0011(esa,sa,s,a),
-           integral_term_0012(esa,sa,s,a),
-           integral_term_0013(esa,sa,s,a),
-           integral_term_0014(esa,sa,s,a),
-           integral_term_0015(esa,sa,s,a),
-           integral_term_0016(esa,sa,s,a),
-           integral_term_0017(esa,sa,s,a),
-           integral_term_0018(esa,sa,s,a),
-           integral_term_0019(esa,sa,s,a),
-
-           integral_term_0020(esa,sa,s,a),
-           integral_term_0021(esa,sa,s,a),
-           integral_term_0022(esa,sa,s,a),
-           integral_term_0023(esa,sa,s,a),
-           integral_term_0024(esa,sa,s,a),
-           integral_term_0025(esa,sa,s,a),
-           integral_term_0026(esa,sa,s,a),
-           integral_term_0027(esa,sa,s,a),
-           integral_term_0028(esa,sa,s,a),
-           integral_term_0029(esa,sa,s,a),
-
-           integral_term_0030(esa,sa,s,a),
-           integral_term_0031(esa,sa,s,a),
-           integral_term_0032(esa,sa,s,a)
-           )
-}
-
-already_marg_like3 <- function(parms){
+## set up integrated likelihood:
+integrated_likelihood <- function(parms){
   
         a  <- parms[ 1];
   shape_in <- parms[ 2];
@@ -152,7 +100,7 @@ start_parms_val <- c(0.5, 1, 0.10, rep(0.1, 9))
 
 cphz_stirling <-
 optim(start_parms_val,
-      already_marg_like3,
+      integrated_likelihood,
       method="L-BFGS-B",
       
       lower=c(0.1,0.1, -7, rep(-3, 9)),  ## COND  PH lower bounds     
@@ -182,8 +130,8 @@ cphz_stirling_time <- end_time - start_time
 
 ## Compare the two closed forms:
 
--   Conditional Proportional Hazards - Recursive-*Ω* time: 12.30 seconds
--   Conditional Proportional Hazards - Static-Stirling time: 3.36
+-   Conditional Proportional Hazards - Recursive-*Ω* time: 12.89 seconds
+-   Conditional Proportional Hazards - Static-Stirling time: 3.32
     seconds
 
 Static-Stirling is faster. Also provided the same likelihood:
@@ -256,3 +204,42 @@ log(lambda):
     ## alpha = (1-nu)  0.719  0.446  0.992
     ## rho             0.780  0.529  1.031
     ## log(lambda)    -4.624 -6.360 -2.888
+
+Sure, some of the estimates are slightly off, and this discrepancy
+diminishes as the sample size grows. It is best to focus on how similar
+the likelihood estimates are.
+
+At this point, we have estimated the conditional proportional hazards
+perspective-parameterization. The conditional proportional hazards
+perspective-parameterization is the sole perspective-parameterization
+offered currently by `parfm`. Exponentiating the coefficients give the
+cluster-specific proportional hazard ratios and exponentiating the 95%
+CI bounds give the 95% CI bounds for the cluster-specific hazard ratios.
+
+But what if we wanted the other 3 perspective-parameterizations? If we
+only wanted estimates for marginal proportional hazards, conditional
+acceleration factor, and/or marginal acceleration factor, we just need
+to take the direct esimates of the conditional proportional hazards
+perspective-parameterization and do some calculations as per this table:
+
+![see Table 3 in the
+paper](table3.png "Note: The diagonal has the direct estimates for each perspective-parameterizations. This is Table 3 from the paper.")
+
+Our estimate of *α* is 0.719, the estimate of
+*β*<sub>*h*</sub><sup>*c*</sup> is 1.683 for diabetes, and the estimate
+of the shape *p* is 0.780.
+
+So from the 1st row of Table 3 above we can cal
+
+-   Conditional hazard ratios: exp (*β*<sub>*h*</sub><sup>*c*</sup>) =
+    exp (1.683) = 5.379
+
+-   Marginal hazard ratios: exp (*α* × *β*<sub>*h*</sub><sup>*c*</sup>)
+    = exp (0.719 × 1.683) = 3.354
+
+-   Conditional acceleration factor:
+    $\\exp(\\frac{1}{-p} \\times \\beta^c\_h)$ = exp (1.683) = 5.379
+
+-   Marginal acceleration factor:
+    $\\exp(\\frac{\\alpha}{-p} \\times \\beta^c\_h)$ =
+    exp (0.719 × 1.683) = 3.354
