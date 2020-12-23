@@ -1,0 +1,305 @@
+1                                                          The SAS System                             07:42 Thursday, April 23, 2020
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M3) 
+      Licensed to US NATIONAL INSTITUTES OF HEALTH, Site 70111489.
+NOTE: This session is executing on the Linux 3.10.0-862.14.4.el7.x86_64 (LIN X64) platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 14.1
+      SAS/IML 14.1
+
+NOTE: Additional host information:
+
+ Linux LIN X64 3.10.0-862.14.4.el7.x86_64 #1 SMP Wed Sep 26 15:12:11 UTC 2018 x86_64 CentOS Linux release 7.5.1804 (Core)  
+
+You are running SAS 9. Some SAS 8 files will be automatically converted 
+by the V9 engine; others are incompatible.  Please see 
+http://support.sas.com/rnd/migration/planning/platform/64bit.html
+
+PROC MIGRATE will preserve current SAS file attributes and is 
+recommended for converting all your SAS libraries from any 
+SAS 8 release to SAS 9.  For details and examples, please see
+http://support.sas.com/rnd/migration/index.html
+
+
+This message is contained in the SAS news file, and is presented upon
+initialization.  Edit the file "news" in the "misc/base" directory to
+display site-specific news and information in the program log.
+The command line option "-nonews" will prevent this display.
+
+
+
+
+NOTE: SAS initialization used:
+      real time           1.25 seconds
+      cpu time            0.05 seconds
+      
+1          proc import out=teeth
+2          	datafile="../diabetic_dental_data.csv"
+3          	dbms=csv replace;
+4          run;
+
+5           /**********************************************************************
+6           *   PRODUCT:   SAS
+7           *   VERSION:   9.4
+8           *   CREATOR:   External File Interface
+9           *   DATE:      23APR20
+10          *   DESC:      Generated SAS Datastep Code
+11          *   TEMPLATE SOURCE:  (None Specified.)
+12          ***********************************************************************/
+13             data WORK.TEETH    ;
+14             %let _EFIERR_ = 0; /* set the ERROR detection macro variable */
+15             infile '../diabetic_dental_data.csv' delimiter = ',' MISSOVER DSD lrecl=32767 firstobs=2 ;
+16                informat id best32. ;
+17                informat tooth best32. ;
+18                informat status best32. ;
+19                informat time best32. ;
+2                                                          The SAS System                             07:42 Thursday, April 23, 2020
+
+20                informat diabetes $13. ;
+21                informat diabetes_yn_10 best32. ;
+22                informat tobacco $19. ;
+23                informat tobacco_use_yn_10 best32. ;
+24                informat gender $8. ;
+25                informat male_yn_10 best32. ;
+26                informat age best32. ;
+27                informat age_stdzd best32. ;
+28                informat ageQ1 best32. ;
+29                informat ageQ2 best32. ;
+30                informat ageQ3 best32. ;
+31                informat ageQ4 best32. ;
+32                informat mobility best32. ;
+33                informat mobility1_0 best32. ;
+34                informat mobility2_0 best32. ;
+35                informat mobility3_0 best32. ;
+36                informat bop best32. ;
+37                informat bop_stdzd best32. ;
+38                informat plaque best32. ;
+39                informat plaque_stdzd best32. ;
+40                informat pdmean best32. ;
+41                informat pdmean_stdzd best32. ;
+42                informat calmean best32. ;
+43                informat calmean_stdzd best32. ;
+44                informat crown $10. ;
+45                informat crown_yn_10 best32. ;
+46                informat implant $12. ;
+47                informat implant_yn_10 best32. ;
+48                informat molar $5. ;
+49                informat molar_yn_10 best32. ;
+50                format id best12. ;
+51                format tooth best12. ;
+52                format status best12. ;
+53                format time best12. ;
+54                format diabetes $13. ;
+55                format diabetes_yn_10 best12. ;
+56                format tobacco $19. ;
+57                format tobacco_use_yn_10 best12. ;
+58                format gender $8. ;
+59                format male_yn_10 best12. ;
+60                format age best12. ;
+61                format age_stdzd best12. ;
+62                format ageQ1 best12. ;
+63                format ageQ2 best12. ;
+64                format ageQ3 best12. ;
+65                format ageQ4 best12. ;
+66                format mobility best12. ;
+67                format mobility1_0 best12. ;
+68                format mobility2_0 best12. ;
+69                format mobility3_0 best12. ;
+70                format bop best12. ;
+71                format bop_stdzd best12. ;
+72                format plaque best12. ;
+73                format plaque_stdzd best12. ;
+74                format pdmean best12. ;
+75                format pdmean_stdzd best12. ;
+76                format calmean best12. ;
+77                format calmean_stdzd best12. ;
+3                                                          The SAS System                             07:42 Thursday, April 23, 2020
+
+78                format crown $10. ;
+79                format crown_yn_10 best12. ;
+80                format implant $12. ;
+81                format implant_yn_10 best12. ;
+82                format molar $5. ;
+83                format molar_yn_10 best12. ;
+84             input
+85                         id
+86                         tooth
+87                         status
+88                         time
+89                         diabetes $
+90                         diabetes_yn_10
+91                         tobacco $
+92                         tobacco_use_yn_10
+93                         gender $
+94                         male_yn_10
+95                         age
+96                         age_stdzd
+97                         ageQ1
+98                         ageQ2
+99                         ageQ3
+100                        ageQ4
+101                        mobility
+102                        mobility1_0
+103                        mobility2_0
+104                        mobility3_0
+105                        bop
+106                        bop_stdzd
+107                        plaque
+108                        plaque_stdzd
+109                        pdmean
+110                        pdmean_stdzd
+111                        calmean
+112                        calmean_stdzd
+113                        crown $
+114                        crown_yn_10
+115                        implant $
+116                        implant_yn_10
+117                        molar $
+118                        molar_yn_10
+119            ;
+120            if _ERROR_ then call symputx('_EFIERR_',1);  /* set ERROR detection macro variable */
+121            run;
+
+NOTE: The infile '../diabetic_dental_data.csv' is:
+      
+      Filename=/gpfs/gsfs8/users/swihartbj/projects/marginalization/_dipankar/_manuscripts/jrss/_c_supp_materials/diabetic_dental_da
+      ta.csv,
+      Owner Name=swihartbj,Group Name=swihartbj,
+      Access Permission=-rw-r-----,
+      Last Modified=08Apr2020:07:40:07,
+      File Size (bytes)=15889728
+
+NOTE: 65890 records were read from the infile '../diabetic_dental_data.csv'.
+      The minimum record length was 204.
+      The maximum record length was 268.
+NOTE: The data set WORK.TEETH has 65890 observations and 34 variables.
+4                                                          The SAS System                             07:42 Thursday, April 23, 2020
+
+NOTE: DATA statement used (Total process time):
+      real time           0.27 seconds
+      cpu time            0.20 seconds
+      
+
+65890 rows created in WORK.TEETH from ../diabetic_dental_data.csv.
+  
+  
+  
+NOTE: WORK.TEETH data set was successfully created.
+NOTE: The data set WORK.TEETH has 65890 observations and 34 variables.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.59 seconds
+      cpu time            0.30 seconds
+      
+
+122        
+123        ods html
+123      ! body='marginal_accelerated_failure_200__GQ_gconv0_noadscale_FTOL.htm'(title="marg_aft_200__GQ_gconv0_noadscale_FTOL")
+123      ! style=HTMLBlue;
+NOTE: Writing HTML Body file: marginal_accelerated_failure_200__GQ_gconv0_noadscale_FTOL.htm
+124        
+125        
+126        proc means data=teeth ;
+127        run;
+
+NOTE: There were 65890 observations read from the data set WORK.TEETH.
+NOTE: The PROCEDURE MEANS printed page 1.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.07 seconds
+      cpu time            0.10 seconds
+      
+
+128        
+129        proc nlmixed data=teeth qpoints=200 NTHREADS=-1 noad noadscale gconv=0 FTOL=0.000000000001763762991;
+130        
+131            parms              alpha     =  0.50
+132                               shape_m   =  1.00
+133                               gamma_m_f =  2.90
+134                       diabetes_beta_m_f = -0.19
+135                        tobacco_beta_m_f = -0.71
+136                           male_beta_m_f = -0.11
+137                      age_stdzd_beta_m_f = -0.12
+138                      bop_stdzd_beta_m_f = -0.07
+139                   plaque_stdzd_beta_m_f =  0.01
+140                  calmean_stdzd_beta_m_f = -0.19
+141                          crown_beta_m_f = -0.10
+142                          molar_beta_m_f = -0.19;
+143        
+144            bounds            0.1  <              alpha     < 0.9,
+145                              0.1  <              shape_m   < 2.0,
+146                              2.0  <              gamma_m_f < 3.0,
+147                             -1.0  <      diabetes_beta_m_f < 0.0,
+148                             -1.0  <       tobacco_beta_m_f < 0.0,
+149                             -1.0  <          male_beta_m_f < 0.0,
+150                             -1.0  <     age_stdzd_beta_m_f < 0.0,
+151                             -1.0  <     bop_stdzd_beta_m_f < 0.0,
+152                              0.0  <  plaque_stdzd_beta_m_f < 1.0,
+5                                                          The SAS System                             07:42 Thursday, April 23, 2020
+
+153                             -1.0  < calmean_stdzd_beta_m_f < 0.0,
+154                             -1.0  <         crown_beta_m_f < 0.0,
+155                             -1.0  <         molar_beta_m_f < 0.0;
+156        
+157            /*setup constants*/
+158            pi=constant("pi");
+159        
+160            /* generate independent k1~Uniform(0,pi) and k2~Exponential(1)*/
+161            k1=     probnorm(z1)*pi;
+162            k2=-log(probnorm(z2));
+163            /* generate u_i using k1, k2*/
+164            u_i = sin(alpha * k1) /( sin(k1)**(1/alpha)) * (sin((1-alpha)*k1)/k2)**(1/alpha-1);
+165        
+166            /* linear predictor*/
+167            lin_pred =                     gamma_m_f                  +
+168                                   diabetes_beta_m_f *    diabetes_yn_10 +
+169                                    tobacco_beta_m_f * tobacco_use_yn_10 +
+170                                       male_beta_m_f *        male_yn_10 +
+171                                  age_stdzd_beta_m_f *         age_stdzd +
+172                                  bop_stdzd_beta_m_f *         bop_stdzd +
+173                               plaque_stdzd_beta_m_f *      plaque_stdzd +
+174                              calmean_stdzd_beta_m_f *     calmean_stdzd +
+175                                      crown_beta_m_f *       crown_yn_10 +
+176                                      molar_beta_m_f *       molar_yn_10 ;
+177        
+178            /* parameterize shape_c and scale*/
+179            shape_c = shape_m / alpha;
+180            scale =  exp(-shape_c * lin_pred/alpha);  /* MARG AFT parameterization */
+181        
+182        
+183        
+184        
+185            /*likelihood calculations*/
+186            log_S_t_u_i =  (- u_i * scale * time**shape_c);
+187            log_h_t_u_i = log(u_i * scale * shape_c * time**(shape_c-1));
+188            log_f_t_u_i = log_h_t_u_i + log_S_t_u_i;
+189        
+190            if status=0 then loglik = log_S_t_u_i;
+191            if status=1 then loglik = log_f_t_u_i;
+192        
+193            model time~general(loglik);
+194        
+195            random z1 z2 ~ normal([0,0],[1,0,1]) subject=id;
+196        
+197        
+198        run;
+
+NOTE:  The value for NTHREADS= has been changed to 72.
+NOTE: Convergence criterion (FCONV=1.763763E-12) satisfied.
+NOTE: At least one element of the gradient is greater than 1e-3.
+NOTE: The PROCEDURE NLMIXED printed pages 2-3.
+NOTE: PROCEDURE NLMIXED used (Total process time):
+      real time           33:16:59.72
+      
+
+199        
+200        ods html close;
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+6                                                          The SAS System                             07:42 Thursday, April 23, 2020
+
+NOTE: The SAS System used:
+      real time           33:17:01.96
+      

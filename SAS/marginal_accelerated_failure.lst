@@ -1,0 +1,154 @@
+                                                           The SAS System                         07:42 Thursday, April 23, 2020   1
+
+                                                        The MEANS Procedure
+
+                     Variable                 N            Mean         Std Dev         Minimum         Maximum
+                     ------------------------------------------------------------------------------------------
+                     id                   65890         2692.28         1537.06       1.0000000         5336.00
+                     tooth                65890      16.2909243       9.0216546       1.0000000      32.0000000
+                     status               65890       0.0697071       0.2546547               0       1.0000000
+                     time                 65890       2.2847429       1.8258954       0.0027397       5.6082192
+                     diabetes_yn_10       65890       0.0927303       0.2900563               0       1.0000000
+                     tobacco_use_yn_10    65890       0.2216118       0.4153343               0       1.0000000
+                     male_yn_10           65890       0.4950220       0.4999790               0       1.0000000
+                     age                  65890      58.4126575      18.0830695      16.0000000      90.0000000
+                     age_stdzd            65890    1.358755E-16       1.0000000      -2.3454346       1.7467910
+                     ageQ1                65890       0.2521020       0.4342228               0       1.0000000
+                     ageQ2                65890       0.2680680       0.4429566               0       1.0000000
+                     ageQ3                65890       0.2463044       0.4308612               0       1.0000000
+                     ageQ4                65890       0.2335256       0.4230769               0       1.0000000
+                     mobility             65890       0.0370618       0.2369544               0       3.0000000
+                     mobility1_0          65890       0.0219760       0.1466063               0       1.0000000
+                     mobility2_0          65890       0.0048566       0.0695203               0       1.0000000
+                     mobility3_0          65890       0.0017909       0.0422810               0       1.0000000
+                     bop                  65890      11.7410330      22.0396789               0     100.0000000
+                     bop_stdzd            65890    1.993744E-15       1.0000000      -0.5327225       4.0045487
+                     plaque               65890      19.0451257      28.2822069               0     100.0000000
+                     plaque_stdzd         65890    1.739854E-15       1.0000000      -0.6733960       2.8623959
+                     pdmean               65890       2.5095679       0.7175421               0      12.0000000
+                     pdmean_stdzd         65890    -1.75474E-15       1.0000000      -3.4974505      13.2263074
+                     calmean              65890       2.6426278       0.9306840               0      15.0000000
+                     calmean_stdzd        65890    3.010829E-16       1.0000000      -2.8394468      13.2777308
+                     crown_yn_10          65890       0.1841099       0.3875767               0       1.0000000
+                     implant_yn_10        65890       0.0023221       0.0481321               0       1.0000000
+                     molar_yn_10          65890       0.3899530       0.4877430               0       1.0000000
+                     ------------------------------------------------------------------------------------------
+                                                           The SAS System                         07:42 Thursday, April 23, 2020   2
+
+                                                       The NLMIXED Procedure
+
+                                                           Specifications
+
+                                  Data Set                                    WORK.TEETH          
+                                  Dependent Variable                          time                
+                                  Distribution for Dependent Variable         General             
+                                  Random Effects                              z1 z2               
+                                  Distribution for Random Effects             Normal              
+                                  Subject Variable                            id                  
+                                  Optimization Technique                      Dual Quasi-Newton   
+                                  Integration Method                          Gaussian Quadrature 
+                                  Number of Threads                           72                  
+
+
+                                                             Dimensions
+
+                                              Observations Used                  65890
+                                              Observations Not Used                  0
+                                              Total Observations                 65890
+                                              Subjects                            5336
+                                              Max Obs per Subject                   30
+                                              Parameters                            12
+                                              Quadrature Points                    200
+
+
+                                                         Initial Parameters
+ 
+                                                                                           plaque_  calmean_
+                                   diabetes_  tobacco_     male_  age_stdzd_  bop_stdzd_    stdzd_    stdzd_    crown_    molar_
+       alpha   shape_m  gamma_m_f   beta_m_f  beta_m_f  beta_m_f    beta_m_f    beta_m_f  beta_m_f  beta_m_f  beta_m_f  beta_m_f
+
+         0.5         1        2.9      -0.19     -0.71     -0.11       -0.12       -0.07      0.01     -0.19      -0.1     -0.19
+
+                                                         Initial Parameters
+ 
+                                                               Negative
+                                                                    Log
+                                                             Likelihood
+
+                                                             17096.2371
+
+
+                                                          Iteration History
+ 
+                                                      Negative
+                                                           Log                   Maximum
+                                Iteration Calls     Likelihood    Difference    Gradient       Slope
+
+                                       1      5     14261.6255      2834.612     1621.64    -9484201
+                                       2      9     14197.9963      63.62919     3331.64    -20.7489
+                                       3     13     14052.4852      145.5112     1586.93    -400.819
+                                       4     17     14050.7638      1.721377     1574.67    -23919.5
+                                       5     21     13998.8010      51.96275     691.761    -78.0013
+                                       6     24     13985.0343      13.76669     283.228    -23.4229
+                                       7     27     13984.3636      0.670768     86.3136    -1.43321
+                                       8     29     13983.3615        1.0021     87.2647    -0.63425
+                                                           The SAS System                         07:42 Thursday, April 23, 2020   3
+
+                                                       The NLMIXED Procedure
+
+                                                          Iteration History
+ 
+                                                      Negative
+                                                           Log                   Maximum
+                                Iteration Calls     Likelihood    Difference    Gradient       Slope
+
+                                       9     31     13982.6610      0.700491     48.3763    -0.82525
+                                      10     34     13982.3441      0.316888     16.0915    -0.56550
+                                      11     37     13982.2339      0.110217     19.9423    -0.04846
+                                      12     39     13982.1680      0.065881     32.7003    -0.06167
+                                      13     41     13982.1157      0.052314     6.78188    -0.08514
+                                      14     44     13982.0860      0.029689     5.52860    -0.03768
+                                      15     47     13982.0711      0.014906     6.74438    -0.01110
+                                      16     51     13982.0405      0.030641     2.17891    -0.00659
+                                      17     54     13982.0392      0.001241     1.19276    -0.00230
+                                      18     58     13982.0370      0.002261     0.93381    -0.00018
+                                      19     61     13982.0368      0.000132     0.69444    -0.00010
+                                      20     65     13982.0355       0.00129     0.30237    -0.00015
+                                      21     68     13982.0355      0.000047     0.31410    -0.00005
+                                      22     71     13982.0355      9.861E-6     0.15310    -0.00001
+                                      23     75     13982.0354      0.000039     0.61854    -2.59E-6
+                                      24     77     13982.0354      0.000019     1.34584    -0.00003
+                                      25     79     13982.0354      0.000021     0.28783    -0.00003
+                                      26     82     13982.0354      0.000011     0.30190    -7.58E-6
+                                      27     85     13982.0354      2.773E-6    0.012833    -3.96E-6
+                                      28     88     13982.0354      3.725E-9    0.005223    -4.81E-9
+
+
+                                            NOTE: FCONV convergence criterion satisfied.          
+
+
+                                                           Fit Statistics
+
+                                              -2 Log Likelihood                  27964
+                                              AIC (smaller is better)            27988
+                                              AICC (smaller is better)           27988
+                                              BIC (smaller is better)            28067
+
+
+                                                        Parameter Estimates
+ 
+                                               Standard                                      95% Confidence
+         Parameter                 Estimate       Error      DF    t Value    Pr > |t|           Limits           Gradient
+
+         alpha                       0.5608     0.01028    5334      54.54      <.0001      0.5407      0.5810    0.005223
+         shape_m                     0.6230     0.01246    5334      49.98      <.0001      0.5986      0.6474    -0.00159
+         gamma_m_f                   2.8987     0.06383    5334      45.41      <.0001      2.7736      3.0239    0.003233
+         diabetes_beta_m_f          -0.1938     0.06788    5334      -2.85      0.0043     -0.3268    -0.06070    -0.00402
+         tobacco_beta_m_f           -0.7125     0.05120    5334     -13.92      <.0001     -0.8129     -0.6122    -0.00184
+         male_beta_m_f              -0.1112     0.04437    5334      -2.51      0.0122     -0.1982    -0.02426    -0.00101
+         age_stdzd_beta_m_f         -0.1223     0.02609    5334      -4.69      <.0001     -0.1734    -0.07112    -0.00042
+         bop_stdzd_beta_m_f        -0.06651    0.009643    5334      -6.90      <.0001    -0.08541    -0.04760    0.000398
+         plaque_stdzd_beta_m_f      0.01062     0.01211    5334       0.88      0.3805    -0.01312     0.03437    -0.00009
+         calmean_stdzd_beta_m_f     -0.1853    0.009901    5334     -18.71      <.0001     -0.2047     -0.1658    -0.00041
+         crown_beta_m_f             -0.1009     0.02384    5334      -4.23      <.0001     -0.1476    -0.05412    0.000031
+         molar_beta_m_f             -0.1887     0.01850    5334     -10.20      <.0001     -0.2249     -0.1524    -0.00055

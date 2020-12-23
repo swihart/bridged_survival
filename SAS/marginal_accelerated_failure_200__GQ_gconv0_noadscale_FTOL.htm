@@ -1,0 +1,2819 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="Generator" content="SAS Software Version 9.4, see www.sas.com">
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>marg_aft_200__GQ_gconv0_noadscale_FTOL</title>
+<style type="text/css">
+<!--
+.aftercaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  padding-top: 4pt;
+}
+.batch
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  padding: 7px;
+}
+.beforecaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.body
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.bodydate
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: right;
+  vertical-align: top;
+  width: 100%;
+}
+.bycontentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.byline
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.bylinecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.caption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.cell
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.container
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.contentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contentprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contents
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.contentsdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.contenttitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.continued
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  width: 100%;
+}
+.data
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasis
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasisfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.dataempty
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datafixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datastrong
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.datastrongfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.date
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.document
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+a:link {
+color:#0000FF
+}
+a:visited {
+color:#800080
+}
+a:active {
+color:#800080
+}
+.errorbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.errorcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.errorcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.extendedpage
+{
+  background-color: #FAFBFE;
+  border: 1pt solid #000000;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+  text-align: center;
+}
+.fatalbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.fatalcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.fatalcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.folderaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.footer
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footeremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footeremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.footerstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.frame
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.graph
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.header
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headeremphasis
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headeremphasisfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.headersandfooters
+{
+  background-color: #EDF2F9;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrong
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrongfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.index
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.indexaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.indextitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.layoutcontainer
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.layoutregion
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.linecontent
+{
+  background-color: #FAFBFE;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.list
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.list10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.list3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.listitem10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.listitem3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.note
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notebanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.notecontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notecontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.output
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.pageno
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  text-align: right;
+  vertical-align: top;
+}
+.pages
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.pagesdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.pagesitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.pagesproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagesprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagestitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.paragraph
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.parskip
+{
+  border: 0px solid #000000;
+  border-spacing: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.prepage
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: left;
+}
+.proctitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.proctitlefixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooter
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooteremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooteremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooterempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowfooterstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheader
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderemphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderemphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowheaderstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemfooter
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemtitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systitleandfootercontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.table
+{
+  border-bottom-width: 0px;
+  border-collapse: collapse;
+  border-color: #C1C1C1;
+  border-left-width: 1px;
+  border-right-width: 0px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-top-width: 1px;
+}
+.top_stacked_value
+{
+  padding-bottom: 1px;
+  border: 0;
+}
+.middle_stacked_value
+{
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border: 0;
+}
+.bottom_stacked_value
+{
+  padding-top: 1px;
+  border: 0;
+}
+.titleandnotecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.titlesandfooters
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.usertext
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.warnbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.warncontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.warncontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.l {text-align: left }
+.c {text-align: center }
+.r {text-align: right }
+.d {text-align: right }
+.j {text-align: justify }
+.t {vertical-align: top }
+.m {vertical-align: middle }
+.b {vertical-align: bottom }
+TD, TH {vertical-align: top }
+.stacked_cell{padding: 0 }
+-->
+</style>
+<script language="javascript" type="text/javascript">
+<!-- 
+function startup(){
+
+}
+function shutdown(){
+
+}
+
+//-->
+</script>
+
+</head>
+<body onload="startup()" onunload="shutdown()" class="body">
+
+<script language="javascript" type="text/javascript">
+<!-- 
+var _info = navigator.userAgent
+var _ie = (_info.indexOf("MSIE") > 0
+          && _info.indexOf("Win") > 0
+          && _info.indexOf("Windows 3.1") < 0);
+var _ie64 = _info.indexOf("x64") > 0
+
+//-->
+</script>
+
+<div class="branch">
+<a name="IDX"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="c systemtitle">The SAS System</td>
+</tr>
+</table><br>
+<div class="c proctitle">The MEANS Procedure</div>
+<p>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Means: Summary statistics">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="l b header" scope="col">Variable</th>
+<th class="r b header" scope="col">N</th>
+<th class="r b header" scope="col">Mean</th>
+<th class="r b header" scope="col">Std Dev</th>
+<th class="r b header" scope="col">Minimum</th>
+<th class="r b header" scope="col">Maximum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<th class="l data top_stacked_value">id</th>
+</tr>
+<tr>
+<th class="l data middle_stacked_value">tooth</th>
+</tr>
+<tr>
+<th class="l data middle_stacked_value">status</th>
+</tr>
+<tr>
+<th class="l data middle_stacked_value">time</th>
+</tr>
+<tr>
+<th class="l data middle_stacked_value">diabetes_yn_10</th>
+</tr>
+<tr>
+<th class="l data middle_stacked_value">tobacco_use_yn_10</th>
+</tr>
+<tr>
+<th class="l data middle_stacked_value">male_yn_10</th>
+</tr>
+<tr>
+<th class="l data middle_stacked_value">age</th>
+</tr>
+<tr>
+<th class="l data middle_stacked_value">age_stdzd</th>
+</tr>
+<tr>
+<th class="l data middle_stacked_value">ageQ1</th>
+</tr>
+<tr>
+<th class="l data middle_stacked_value">ageQ2</th>
+</tr>
+<tr>
+<th class="l data middle_stacked_value">ageQ3</th>
+</tr>
+<tr>
+<th class="l data middle_stacked_value">ageQ4</th>
+</tr>
+<tr>
+<th class="l data middle_stacked_value">mobility</th>
+</tr>
+<tr>
+<th class="l data middle_stacked_value">mobility1_0</th>
+</tr>
+<tr>
+<th class="l data middle_stacked_value">mobility2_0</th>
+</tr>
+<tr>
+<th class="l data middle_stacked_value">mobility3_0</th>
+</tr>
+<tr>
+<th class="l data middle_stacked_value">bop</th>
+</tr>
+<tr>
+<th class="l data middle_stacked_value">bop_stdzd</th>
+</tr>
+<tr>
+<th class="l data middle_stacked_value">plaque</th>
+</tr>
+<tr>
+<th class="l data middle_stacked_value">plaque_stdzd</th>
+</tr>
+<tr>
+<th class="l data middle_stacked_value">pdmean</th>
+</tr>
+<tr>
+<th class="l data middle_stacked_value">pdmean_stdzd</th>
+</tr>
+<tr>
+<th class="l data middle_stacked_value">calmean</th>
+</tr>
+<tr>
+<th class="l data middle_stacked_value">calmean_stdzd</th>
+</tr>
+<tr>
+<th class="l data middle_stacked_value">crown_yn_10</th>
+</tr>
+<tr>
+<th class="l data middle_stacked_value">implant_yn_10</th>
+</tr>
+<tr>
+<th class="l data bottom_stacked_value">molar_yn_10</th>
+</tr>
+</table></th>
+<td class="r stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r data top_stacked_value">65890</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">65890</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">65890</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">65890</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">65890</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">65890</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">65890</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">65890</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">65890</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">65890</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">65890</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">65890</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">65890</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">65890</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">65890</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">65890</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">65890</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">65890</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">65890</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">65890</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">65890</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">65890</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">65890</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">65890</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">65890</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">65890</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">65890</td>
+</tr>
+<tr>
+<td class="r data bottom_stacked_value">65890</td>
+</tr>
+</table></td>
+<td class="r stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r data top_stacked_value">2692.28</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">16.2909243</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0.0697071</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">2.2847429</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0.0927303</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0.2216118</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0.4950220</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">58.4126575</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value" nowrap>1.358755E-16</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0.2521020</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0.2680680</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0.2463044</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0.2335256</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0.0370618</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0.0219760</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0.0048566</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0.0017909</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">11.7410330</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value" nowrap>1.993744E-15</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">19.0451257</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value" nowrap>1.739854E-15</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">2.5095679</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value" nowrap>-1.75474E-15</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">2.6426278</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value" nowrap>3.010829E-16</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0.1841099</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0.0023221</td>
+</tr>
+<tr>
+<td class="r data bottom_stacked_value">0.3899530</td>
+</tr>
+</table></td>
+<td class="r stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r data top_stacked_value">1537.06</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">9.0216546</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0.2546547</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">1.8258954</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0.2900563</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0.4153343</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0.4999790</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">18.0830695</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">1.0000000</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0.4342228</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0.4429566</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0.4308612</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0.4230769</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0.2369544</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0.1466063</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0.0695203</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0.0422810</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">22.0396789</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">1.0000000</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">28.2822069</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">1.0000000</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0.7175421</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">1.0000000</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0.9306840</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">1.0000000</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0.3875767</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0.0481321</td>
+</tr>
+<tr>
+<td class="r data bottom_stacked_value">0.4877430</td>
+</tr>
+</table></td>
+<td class="r stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r data top_stacked_value">1.0000000</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">1.0000000</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0.0027397</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">16.0000000</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value" nowrap>-2.3454346</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value" nowrap>-0.5327225</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value" nowrap>-0.6733960</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value" nowrap>-3.4974505</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value" nowrap>-2.8394468</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">0</td>
+</tr>
+<tr>
+<td class="r data bottom_stacked_value">0</td>
+</tr>
+</table></td>
+<td class="r stacked_cell data"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td class="r data top_stacked_value">5336.00</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">32.0000000</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">1.0000000</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">5.6082192</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">1.0000000</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">1.0000000</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">1.0000000</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">90.0000000</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">1.7467910</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">1.0000000</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">1.0000000</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">1.0000000</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">1.0000000</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">3.0000000</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">1.0000000</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">1.0000000</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">1.0000000</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">100.0000000</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">4.0045487</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">100.0000000</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">2.8623959</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">12.0000000</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">13.2263074</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">15.0000000</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">13.2777308</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">1.0000000</td>
+</tr>
+<tr>
+<td class="r data middle_stacked_value">1.0000000</td>
+</tr>
+<tr>
+<td class="r data bottom_stacked_value">1.0000000</td>
+</tr>
+</table></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+</div>
+<div class="branch">
+<p style="page-break-after: always;"><br/></p><hr size="3"/>
+<a name="IDX1"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="c systemtitle">The SAS System</td>
+</tr>
+</table><br>
+<div class="c proctitle">The NLMIXED Procedure</div>
+<p>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Nlmixed: Specifications">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Specifications</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">Data Set</th>
+<td class="l data">WORK.TEETH</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Dependent Variable</th>
+<td class="l data">time</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Distribution for Dependent Variable</th>
+<td class="l data">General</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Random Effects</th>
+<td class="l data">z1 z2</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Distribution for Random Effects</th>
+<td class="l data">Normal</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Subject Variable</th>
+<td class="l data">id</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Optimization Technique</th>
+<td class="l data">Dual Quasi-Newton</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Integration Method</th>
+<td class="l data">Gaussian Quadrature</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Number of Threads</th>
+<td class="l data">72</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX2"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Nlmixed: Dimensions">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Dimensions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">Observations Used</th>
+<td class="r data">65890</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Observations Not Used</th>
+<td class="r data">0</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Total Observations</th>
+<td class="r data">65890</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Subjects</th>
+<td class="r data">5336</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Max Obs per Subject</th>
+<td class="r data">30</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Parameters</th>
+<td class="r data">12</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Quadrature Points</th>
+<td class="r data">200</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX3"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Nlmixed: Initial Parameters">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="13" scope="colgroup">Initial Parameters</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">alpha</th>
+<th class="r b header" scope="col">shape_m</th>
+<th class="r b header" scope="col">gamma_m_f</th>
+<th class="r b header" scope="col">diabetes_beta_m_f</th>
+<th class="r b header" scope="col">tobacco_beta_m_f</th>
+<th class="r b header" scope="col">male_beta_m_f</th>
+<th class="r b header" scope="col">age_stdzd_beta_m_f</th>
+<th class="r b header" scope="col">bop_stdzd_beta_m_f</th>
+<th class="r b header" scope="col">plaque_stdzd_beta_m_f</th>
+<th class="r b header" scope="col">calmean_stdzd_beta_m_f</th>
+<th class="r b header" scope="col">crown_beta_m_f</th>
+<th class="r b header" scope="col">molar_beta_m_f</th>
+<th class="r b header" scope="col">Negative<br/>Log<br/>Likelihood</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="r data">0.5</td>
+<td class="r data">1</td>
+<td class="r data">2.9</td>
+<td class="r data" nowrap>-0.19</td>
+<td class="r data" nowrap>-0.71</td>
+<td class="r data" nowrap>-0.11</td>
+<td class="r data" nowrap>-0.12</td>
+<td class="r data" nowrap>-0.07</td>
+<td class="r data">0.01</td>
+<td class="r data" nowrap>-0.19</td>
+<td class="r data" nowrap>-0.1</td>
+<td class="r data" nowrap>-0.19</td>
+<td class="r data">17096.2371</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX4"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Nlmixed: Iteration History">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="6" scope="colgroup">Iteration History</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Iteration</th>
+<th class="r b header" scope="col">Calls</th>
+<th class="r b header" scope="col">Negative<br/>Log<br/>Likelihood</th>
+<th class="r b header" scope="col">Difference</th>
+<th class="r b header" scope="col">Maximum<br/>Gradient</th>
+<th class="r b header" scope="col">Slope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">5</td>
+<td class="r data">14261.6255</td>
+<td class="r data">2834.612</td>
+<td class="r data">1621.64</td>
+<td class="r data" nowrap>-9484201</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="r data">9</td>
+<td class="r data">14197.9963</td>
+<td class="r data">63.62919</td>
+<td class="r data">3331.64</td>
+<td class="r data" nowrap>-20.7489</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="r data">13</td>
+<td class="r data">14052.4852</td>
+<td class="r data">145.5112</td>
+<td class="r data">1586.93</td>
+<td class="r data" nowrap>-400.819</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4</th>
+<td class="r data">17</td>
+<td class="r data">14050.7638</td>
+<td class="r data">1.721377</td>
+<td class="r data">1574.67</td>
+<td class="r data" nowrap>-23919.5</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">5</th>
+<td class="r data">21</td>
+<td class="r data">13998.8010</td>
+<td class="r data">51.96275</td>
+<td class="r data">691.761</td>
+<td class="r data" nowrap>-78.0013</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">6</th>
+<td class="r data">24</td>
+<td class="r data">13985.0343</td>
+<td class="r data">13.76669</td>
+<td class="r data">283.228</td>
+<td class="r data" nowrap>-23.4229</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">7</th>
+<td class="r data">27</td>
+<td class="r data">13984.3636</td>
+<td class="r data">0.670768</td>
+<td class="r data">86.3136</td>
+<td class="r data" nowrap>-1.43321</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">8</th>
+<td class="r data">29</td>
+<td class="r data">13983.3615</td>
+<td class="r data">1.0021</td>
+<td class="r data">87.2647</td>
+<td class="r data" nowrap>-0.63425</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">9</th>
+<td class="r data">31</td>
+<td class="r data">13982.6610</td>
+<td class="r data">0.700491</td>
+<td class="r data">48.3763</td>
+<td class="r data" nowrap>-0.82525</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">10</th>
+<td class="r data">34</td>
+<td class="r data">13982.3441</td>
+<td class="r data">0.316888</td>
+<td class="r data">16.0915</td>
+<td class="r data" nowrap>-0.56550</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">11</th>
+<td class="r data">37</td>
+<td class="r data">13982.2339</td>
+<td class="r data">0.110217</td>
+<td class="r data">19.9423</td>
+<td class="r data" nowrap>-0.04846</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">12</th>
+<td class="r data">39</td>
+<td class="r data">13982.1680</td>
+<td class="r data">0.065881</td>
+<td class="r data">32.7003</td>
+<td class="r data" nowrap>-0.06167</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">13</th>
+<td class="r data">41</td>
+<td class="r data">13982.1157</td>
+<td class="r data">0.052314</td>
+<td class="r data">6.78188</td>
+<td class="r data" nowrap>-0.08514</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">14</th>
+<td class="r data">44</td>
+<td class="r data">13982.0860</td>
+<td class="r data">0.029689</td>
+<td class="r data">5.52860</td>
+<td class="r data" nowrap>-0.03768</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">15</th>
+<td class="r data">47</td>
+<td class="r data">13982.0711</td>
+<td class="r data">0.014906</td>
+<td class="r data">6.74438</td>
+<td class="r data" nowrap>-0.01110</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">16</th>
+<td class="r data">51</td>
+<td class="r data">13982.0405</td>
+<td class="r data">0.030641</td>
+<td class="r data">2.17891</td>
+<td class="r data" nowrap>-0.00659</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">17</th>
+<td class="r data">54</td>
+<td class="r data">13982.0392</td>
+<td class="r data">0.001241</td>
+<td class="r data">1.19276</td>
+<td class="r data" nowrap>-0.00230</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">18</th>
+<td class="r data">58</td>
+<td class="r data">13982.0370</td>
+<td class="r data">0.002261</td>
+<td class="r data">0.93381</td>
+<td class="r data" nowrap>-0.00018</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">19</th>
+<td class="r data">61</td>
+<td class="r data">13982.0368</td>
+<td class="r data">0.000132</td>
+<td class="r data">0.69444</td>
+<td class="r data" nowrap>-0.00010</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">20</th>
+<td class="r data">65</td>
+<td class="r data">13982.0355</td>
+<td class="r data">0.00129</td>
+<td class="r data">0.30237</td>
+<td class="r data" nowrap>-0.00015</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">21</th>
+<td class="r data">68</td>
+<td class="r data">13982.0355</td>
+<td class="r data">0.000047</td>
+<td class="r data">0.31410</td>
+<td class="r data" nowrap>-0.00005</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">22</th>
+<td class="r data">71</td>
+<td class="r data">13982.0355</td>
+<td class="r data" nowrap>9.861E-6</td>
+<td class="r data">0.15310</td>
+<td class="r data" nowrap>-0.00001</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">23</th>
+<td class="r data">75</td>
+<td class="r data">13982.0354</td>
+<td class="r data">0.000039</td>
+<td class="r data">0.61854</td>
+<td class="r data" nowrap>-2.59E-6</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">24</th>
+<td class="r data">77</td>
+<td class="r data">13982.0354</td>
+<td class="r data">0.000019</td>
+<td class="r data">1.34584</td>
+<td class="r data" nowrap>-0.00003</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">25</th>
+<td class="r data">79</td>
+<td class="r data">13982.0354</td>
+<td class="r data">0.000021</td>
+<td class="r data">0.28783</td>
+<td class="r data" nowrap>-0.00003</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">26</th>
+<td class="r data">82</td>
+<td class="r data">13982.0354</td>
+<td class="r data">0.000011</td>
+<td class="r data">0.30190</td>
+<td class="r data" nowrap>-7.58E-6</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">27</th>
+<td class="r data">85</td>
+<td class="r data">13982.0354</td>
+<td class="r data" nowrap>2.773E-6</td>
+<td class="r data">0.012833</td>
+<td class="r data" nowrap>-3.96E-6</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">28</th>
+<td class="r data">88</td>
+<td class="r data">13982.0354</td>
+<td class="r data" nowrap>3.725E-9</td>
+<td class="r data">0.005223</td>
+<td class="r data" nowrap>-4.81E-9</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX5"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Nlmixed: Convergence Status">
+<colgroup>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="c data">NOTE: FCONV convergence criterion satisfied.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX6"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Nlmixed: Fit Statistics">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Fit Statistics</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">-2 Log Likelihood</th>
+<td class="r data">27964</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">AIC (smaller is better)</th>
+<td class="r data">27988</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">AICC (smaller is better)</th>
+<td class="r data">27988</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">BIC (smaller is better)</th>
+<td class="r data">28067</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX7"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Nlmixed: Parameter Estimates">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="9" scope="colgroup">Parameter Estimates</th>
+</tr>
+<tr>
+<th class="l b header" scope="col">Parameter</th>
+<th class="r b header" scope="col">Estimate</th>
+<th class="r b header" scope="col">Standard<br/>Error</th>
+<th class="r b header" scope="col">DF</th>
+<th class="r b header" scope="col">t&nbsp;Value</th>
+<th class="r b header" scope="col">Pr&nbsp;&gt;&nbsp;|t|</th>
+<th class="c b header" colspan="2" scope="colgroup">95% Confidence Limits</th>
+<th class="r b header" scope="col">Gradient</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">alpha</th>
+<td class="r data">0.5608</td>
+<td class="r data">0.01028</td>
+<td class="r data">5334</td>
+<td class="r data">54.54</td>
+<td class="r data">&lt;.0001</td>
+<td class="r data">0.5407</td>
+<td class="r data">0.5810</td>
+<td class="r data">0.005223</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">shape_m</th>
+<td class="r data">0.6230</td>
+<td class="r data">0.01246</td>
+<td class="r data">5334</td>
+<td class="r data">49.98</td>
+<td class="r data">&lt;.0001</td>
+<td class="r data">0.5986</td>
+<td class="r data">0.6474</td>
+<td class="r data" nowrap>-0.00159</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">gamma_m_f</th>
+<td class="r data">2.8987</td>
+<td class="r data">0.06383</td>
+<td class="r data">5334</td>
+<td class="r data">45.41</td>
+<td class="r data">&lt;.0001</td>
+<td class="r data">2.7736</td>
+<td class="r data">3.0239</td>
+<td class="r data">0.003233</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">diabetes_beta_m_f</th>
+<td class="r data" nowrap>-0.1938</td>
+<td class="r data">0.06788</td>
+<td class="r data">5334</td>
+<td class="r data" nowrap>-2.85</td>
+<td class="r data">0.0043</td>
+<td class="r data" nowrap>-0.3268</td>
+<td class="r data" nowrap>-0.06070</td>
+<td class="r data" nowrap>-0.00402</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">tobacco_beta_m_f</th>
+<td class="r data" nowrap>-0.7125</td>
+<td class="r data">0.05120</td>
+<td class="r data">5334</td>
+<td class="r data" nowrap>-13.92</td>
+<td class="r data">&lt;.0001</td>
+<td class="r data" nowrap>-0.8129</td>
+<td class="r data" nowrap>-0.6122</td>
+<td class="r data" nowrap>-0.00184</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">male_beta_m_f</th>
+<td class="r data" nowrap>-0.1112</td>
+<td class="r data">0.04437</td>
+<td class="r data">5334</td>
+<td class="r data" nowrap>-2.51</td>
+<td class="r data">0.0122</td>
+<td class="r data" nowrap>-0.1982</td>
+<td class="r data" nowrap>-0.02426</td>
+<td class="r data" nowrap>-0.00101</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">age_stdzd_beta_m_f</th>
+<td class="r data" nowrap>-0.1223</td>
+<td class="r data">0.02609</td>
+<td class="r data">5334</td>
+<td class="r data" nowrap>-4.69</td>
+<td class="r data">&lt;.0001</td>
+<td class="r data" nowrap>-0.1734</td>
+<td class="r data" nowrap>-0.07112</td>
+<td class="r data" nowrap>-0.00042</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">bop_stdzd_beta_m_f</th>
+<td class="r data" nowrap>-0.06651</td>
+<td class="r data">0.009643</td>
+<td class="r data">5334</td>
+<td class="r data" nowrap>-6.90</td>
+<td class="r data">&lt;.0001</td>
+<td class="r data" nowrap>-0.08541</td>
+<td class="r data" nowrap>-0.04760</td>
+<td class="r data">0.000398</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">plaque_stdzd_beta_m_f</th>
+<td class="r data">0.01062</td>
+<td class="r data">0.01211</td>
+<td class="r data">5334</td>
+<td class="r data">0.88</td>
+<td class="r data">0.3805</td>
+<td class="r data" nowrap>-0.01312</td>
+<td class="r data">0.03437</td>
+<td class="r data" nowrap>-0.00009</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">calmean_stdzd_beta_m_f</th>
+<td class="r data" nowrap>-0.1853</td>
+<td class="r data">0.009901</td>
+<td class="r data">5334</td>
+<td class="r data" nowrap>-18.71</td>
+<td class="r data">&lt;.0001</td>
+<td class="r data" nowrap>-0.2047</td>
+<td class="r data" nowrap>-0.1658</td>
+<td class="r data" nowrap>-0.00041</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">crown_beta_m_f</th>
+<td class="r data" nowrap>-0.1009</td>
+<td class="r data">0.02384</td>
+<td class="r data">5334</td>
+<td class="r data" nowrap>-4.23</td>
+<td class="r data">&lt;.0001</td>
+<td class="r data" nowrap>-0.1476</td>
+<td class="r data" nowrap>-0.05412</td>
+<td class="r data">0.000031</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">molar_beta_m_f</th>
+<td class="r data" nowrap>-0.1887</td>
+<td class="r data">0.01850</td>
+<td class="r data">5334</td>
+<td class="r data" nowrap>-10.20</td>
+<td class="r data">&lt;.0001</td>
+<td class="r data" nowrap>-0.2249</td>
+<td class="r data" nowrap>-0.1524</td>
+<td class="r data" nowrap>-0.00055</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+</div>
+</body>
+</html>
