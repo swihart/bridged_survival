@@ -1,7 +1,7 @@
 Supplementary Materials to Swihart & Bandyopadhyay (2021)
 ================
 
--   [Conditional Proportional Hazards (Recursive-*Ω*
+-   [Conditional Proportional Hazards (Recursive-Omega
     in R)](#conditional-proportional-hazards-recursive-omega-in-r)
 -   [Conditional Proportional Hazards (Stirling-Static
     in R)](#conditional-proportional-hazards-stirling-static-in-r)
@@ -35,7 +35,7 @@ library(data.table)
 library(parfm)
 ```
 
-## Conditional Proportional Hazards (Recursive-*Ω* in R)
+## Conditional Proportional Hazards (Recursive-Omega in R)
 
 ``` r
 start_time <- Sys.time()
@@ -160,8 +160,8 @@ cphz_stirling_time <- end_time - start_time
 
 ### Compare the two closed forms
 
--   Conditional Proportional Hazards - Recursive-*Ω* time: 13.27 seconds
--   Conditional Proportional Hazards - Static-Stirling time: 3.58
+-   Conditional Proportional Hazards - Recursive-*Ω* time: 13.69 seconds
+-   Conditional Proportional Hazards - Static-Stirling time: 3.51
     seconds
 
 Static-Stirling is faster. Also provided the same likelihood:
@@ -391,8 +391,8 @@ mphz_stirling_time <- end_time - start_time
 
 ### Compare the two closed forms
 
--   Conditional Proportional Hazards - Recursive-*Ω* time: 13.27 seconds
--   Marginal Proportional Hazards - Static-Stirling time: 2.66 seconds
+-   Conditional Proportional Hazards - Recursive-*Ω* time: 13.69 seconds
+-   Marginal Proportional Hazards - Static-Stirling time: 2.79 seconds
 
 Static-Stirling is faster. Also provided the same likelihood:
 
@@ -569,8 +569,8 @@ caft_stirling_time <- end_time - start_time
 
 ### Compare the two closed forms
 
--   Conditional Proportional Hazards - Recursive-*Ω* time: 13.27 seconds
--   Conditional Acceleration Factor - Static-Stirling time: 1.00 seconds
+-   Conditional Proportional Hazards - Recursive-*Ω* time: 13.69 seconds
+-   Conditional Acceleration Factor - Static-Stirling time: 0.98 seconds
 
 Static-Stirling is faster. Also provided the same likelihood:
 
@@ -750,8 +750,8 @@ maft_stirling_time <- end_time - start_time
 
 ### Compare the two closed forms
 
--   Conditional Proportional Hazards - Recursive-*Ω* time: 13.27 seconds
--   Marginal Acceleration Factor - Static-Stirling time: 1.03 seconds
+-   Conditional Proportional Hazards - Recursive-*Ω* time: 13.69 seconds
+-   Marginal Acceleration Factor - Static-Stirling time: 1.06 seconds
 
 Static-Stirling is faster. Also provided the same likelihood:
 
