@@ -5,17 +5,32 @@ Supplementary Materials to Swihart & Bandyopadhyay (2021)
     in R)](#conditional-proportional-hazards-recursive-omega-in-r)
 -   [Conditional Proportional Hazards (Stirling-Static
     in R)](#conditional-proportional-hazards-stirling-static-in-r)
--   [Compare the two closed forms:](#compare-the-two-closed-forms)
+    -   [Compare the two closed forms](#compare-the-two-closed-forms)
 -   [Marginal Proportional Hazards (Stirling-Static
     in R)](#marginal-proportional-hazards-stirling-static-in-r)
--   [Compare the two closed forms:](#compare-the-two-closed-forms-1)
+    -   [Compare the two closed forms](#compare-the-two-closed-forms-1)
 -   [Conditional Accerlation Factor (Stirling-Static
     in R)](#conditional-accerlation-factor-stirling-static-in-r)
--   [Compare the two closed forms:](#compare-the-two-closed-forms-2)
+    -   [Compare the two closed forms](#compare-the-two-closed-forms-2)
 -   [Marginal Accerlation Factor (Stirling-Static
     in R)](#marginal-accerlation-factor-stirling-static-in-r)
--   [Compare the two closed forms:](#compare-the-two-closed-forms-3)
--   [FAQs:](#faqs)
+    -   [Compare the two closed forms](#compare-the-two-closed-forms-3)
+-   [FAQs](#faqs)
+    -   [Q: What if my application needs an integrated term for n &gt;
+        32?](#q-what-if-my-application-needs-an-integrated-term-for-n-32)
+    -   [A: Run this code and store the output in a file similar to
+        `integral_terms_all_v02.R`. Our application needed
+        `n in c(1:32)`. Remember for n=0 the integrated term is
+        `exp(-s^a)`. Just start with 1 below and go to the max number of
+        observed failures in the a cluster for your dataset. For
+        instance, a cluster-randomized clinical trial with clusters of a
+        size 100 would be covered by `n in c(1:100)`. We show the code
+        for `n in c(1:7)` and the output, which can be copy-and-pasted
+        into
+        functions.](#a-run-this-code-and-store-the-output-in-a-file-similar-to-integral_terms_all_v02.r.-our-application-needed-n-in-c132.-remember-for-n0-the-integrated-term-is-exp-sa.-just-start-with-1-below-and-go-to-the-max-number-of-observed-failures-in-the-a-cluster-for-your-dataset.-for-instance-a-cluster-randomized-clinical-trial-with-clusters-of-a-size-100-would-be-covered-by-n-in-c1100.-we-show-the-code-for-n-in-c17-and-the-output-which-can-be-copy-and-pasted-into-functions.)
+    -   [Q: What about SAS?](#q-what-about-sas)
+    -   [A: SAS! Computation times will take longer. Examples of
+        the](#a-sas-computation-times-will-take-longer.-examples-of-the)
 
 **Note: the dataset in this repo is a subset of the one used in the
 paper. Please contact Dipankar Bandyopadhyay (<Bandyop@vcuhealth.org>)
@@ -154,10 +169,10 @@ end_time <- Sys.time()
 cphz_stirling_time <- end_time - start_time
 ```
 
-## Compare the two closed forms:
+### Compare the two closed forms
 
--   Conditional Proportional Hazards - Recursive-*Ω* time: 12.67 seconds
--   Conditional Proportional Hazards - Static-Stirling time: 3.23
+-   Conditional Proportional Hazards - Recursive-*Ω* time: 13.46 seconds
+-   Conditional Proportional Hazards - Static-Stirling time: 3.42
     seconds
 
 Static-Stirling is faster. Also provided the same likelihood:
@@ -385,10 +400,10 @@ end_time <- Sys.time()
 mphz_stirling_time <- end_time - start_time
 ```
 
-## Compare the two closed forms:
+### Compare the two closed forms
 
--   Conditional Proportional Hazards - Recursive-*Ω* time: 12.67 seconds
--   Marginal Proportional Hazards - Static-Stirling time: 2.51 seconds
+-   Conditional Proportional Hazards - Recursive-*Ω* time: 13.46 seconds
+-   Marginal Proportional Hazards - Static-Stirling time: 2.63 seconds
 
 Static-Stirling is faster. Also provided the same likelihood:
 
@@ -563,10 +578,10 @@ end_time <- Sys.time()
 caft_stirling_time <- end_time - start_time
 ```
 
-## Compare the two closed forms:
+### Compare the two closed forms
 
--   Conditional Proportional Hazards - Recursive-*Ω* time: 12.67 seconds
--   Conditional Acceleration Factor - Static-Stirling time: 1.12 seconds
+-   Conditional Proportional Hazards - Recursive-*Ω* time: 13.46 seconds
+-   Conditional Acceleration Factor - Static-Stirling time: 0.98 seconds
 
 Static-Stirling is faster. Also provided the same likelihood:
 
@@ -744,10 +759,10 @@ end_time <- Sys.time()
 maft_stirling_time <- end_time - start_time
 ```
 
-## Compare the two closed forms:
+### Compare the two closed forms
 
--   Conditional Proportional Hazards - Recursive-*Ω* time: 12.67 seconds
--   Marginal Acceleration Factor - Static-Stirling time: 1.08 seconds
+-   Conditional Proportional Hazards - Recursive-*Ω* time: 13.46 seconds
+-   Marginal Acceleration Factor - Static-Stirling time: 1.01 seconds
 
 Static-Stirling is faster. Also provided the same likelihood:
 
@@ -819,7 +834,7 @@ conditional perspectives.
     ## rho            0.561 0.302 0.820
     ## log(lambda)    4.266 2.030 6.501
 
-## FAQs:
+## FAQs
 
 ### Q: What if my application needs an integrated term for n &gt; 32?
 
