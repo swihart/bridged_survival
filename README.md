@@ -20,6 +20,7 @@ Supplementary Materials to Swihart & Bandyopadhyay (2021)
         greater than
         32?](#q-what-if-my-application-needs-an-integrated-term-for-n-greater-than-32)
     -   [Q: What about SAS?](#q-what-about-sas)
+    -   [Q: How did you make Figure 1?](#q-how-did-you-make-figure-1)
 
 **Note: the dataset in this repo is a subset of the one used in the
 paper. Please contact Dipankar Bandyopadhyay (<Bandyop@vcuhealth.org>)
@@ -160,8 +161,8 @@ cphz_stirling_time <- end_time - start_time
 
 ### Compare the two closed forms
 
--   Conditional Proportional Hazards - Recursive-*Ω* time: 13.69 seconds
--   Conditional Proportional Hazards - Static-Stirling time: 3.51
+-   Conditional Proportional Hazards - Recursive-*Ω* time: 16.26 seconds
+-   Conditional Proportional Hazards - Static-Stirling time: 3.72
     seconds
 
 Static-Stirling is faster. Also provided the same likelihood:
@@ -391,8 +392,8 @@ mphz_stirling_time <- end_time - start_time
 
 ### Compare the two closed forms
 
--   Conditional Proportional Hazards - Recursive-*Ω* time: 13.69 seconds
--   Marginal Proportional Hazards - Static-Stirling time: 2.79 seconds
+-   Conditional Proportional Hazards - Recursive-*Ω* time: 16.26 seconds
+-   Marginal Proportional Hazards - Static-Stirling time: 2.90 seconds
 
 Static-Stirling is faster. Also provided the same likelihood:
 
@@ -569,8 +570,8 @@ caft_stirling_time <- end_time - start_time
 
 ### Compare the two closed forms
 
--   Conditional Proportional Hazards - Recursive-*Ω* time: 13.69 seconds
--   Conditional Acceleration Factor - Static-Stirling time: 0.98 seconds
+-   Conditional Proportional Hazards - Recursive-*Ω* time: 16.26 seconds
+-   Conditional Acceleration Factor - Static-Stirling time: 1.95 seconds
 
 Static-Stirling is faster. Also provided the same likelihood:
 
@@ -750,8 +751,8 @@ maft_stirling_time <- end_time - start_time
 
 ### Compare the two closed forms
 
--   Conditional Proportional Hazards - Recursive-*Ω* time: 13.69 seconds
--   Marginal Acceleration Factor - Static-Stirling time: 1.06 seconds
+-   Conditional Proportional Hazards - Recursive-*Ω* time: 16.26 seconds
+-   Marginal Acceleration Factor - Static-Stirling time: 1.37 seconds
 
 Static-Stirling is faster. Also provided the same likelihood:
 
@@ -1052,3 +1053,65 @@ like this:
 
     ods html close;
 
+### Q: How did you make Figure 1?
+
+    library(coxme)
+    library(parfm)
+    library(ggplot2)
+    library(data.table)
+    library(frailtyEM)
+
+    dat <- data.table(    id = c( 1, 1,   1, 1,   2, 2,   2,  2,  2,  2,  2,  2,  2,  2),
+                        time = c(10,11,  20,21,  30,31,  40, 41, 50, 51, 60, 61, 70, 71),
+                      status = c( 0, 1,   1, 1,   1, 1,   1,  1,  0,  0,  0,  1,  0,  0),
+                           x = c( 0, 9,   7, 8,   9, 9,   8,  6,  2,  1,  2,  8,  1,  2))
+
+    miscFuncs::latextable(dat )
+
+    ps <- emfrail(Surv(time, status) ~ x + cluster(id), data=dat, distribution = emfrail_dist(dist = "stable"),
+                  control=emfrail_control(se=FALSE, lik_ci=FALSE, lik_interval=c(0.01,40)))
+
+    gm <- emfrail(Surv(time, status) ~ x + cluster(id), data=dat, distribution = emfrail_dist(dist = "gamma"),
+                  control=emfrail_control(se=FALSE, lik_ci=FALSE, lik_interval=c(0.01,40)))
+
+    (ps.alpha <- exp(ps$logtheta)/(1+exp(ps$logtheta)))
+    exp(ps$coefficients)
+    exp(ps.alpha*ps$coefficients)
+
+    ps
+    gm
+
+    newdata_a <- data.frame(x = c(2, 1))
+    newdata_b <- data.frame(x = c(8, 7))
+
+
+    pl1_a <- autoplot(gm, type = "hr", newdata = newdata_a) + 
+      ggtitle("gamma: the effect of 1 unit \n change in x (from 1 to 2)") + 
+      guides(colour = FALSE) + ylim(1,2.25)
+    pl1_b <- autoplot(gm, type = "hr", newdata = newdata_b) + 
+      ggtitle("gamma: the effect of 1 unit \n change in x (from 7 to 8)") + 
+      guides(colour = FALSE) + ylim(1,2.25) + ylab(NULL)
+    pl2_a <- autoplot(ps, type = "hr", newdata = newdata_a) + 
+      ggtitle("stable: the effect of 1 unit \n change in x (from 1 to 2)") + 
+      guides(colour = FALSE) + ylim(1,2.25)
+    pl2_b <- autoplot(ps, type = "hr", newdata = newdata_b) + 
+      ggtitle("stable: the effect of 1 unit \n change in x (from 7 to 8)") +   
+      guides(colour = FALSE) + ylim(1,2.25) + ylab(NULL)
+
+    plot_lst <- vector("list", length = 4)
+    plot_lst[[1]] <- pl1_a
+    plot_lst[[2]] <- pl1_b
+    plot_lst[[3]] <- pl2_a
+    plot_lst[[4]] <- pl2_b
+
+
+
+    p2x2 <- cowplot::plot_grid(plotlist = plot_lst, nrow = 2, labels = c("A", "B", "C","D"))
+
+    legend_b <- cowplot::get_legend(autoplot(gm, type = "hr", newdata = newdata_a)+ 
+                             guides(color = guide_legend(nrow = 1)) +
+                             theme(legend.position = "bottom"))
+
+    # add the legend underneath the row we made earlier. Give it 10%
+    # of the height of one plot (via rel_heights).
+    cowplot::plot_grid(p2x2, legend_b, ncol = 1, rel_heights = c(1, .1))
