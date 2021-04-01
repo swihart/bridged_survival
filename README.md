@@ -165,8 +165,8 @@ cphz_stirling_time <- end_time - start_time
 
 ### Compare the two closed forms
 
--   Conditional Proportional Hazards - Recursive-*Ω* time: 14.73 seconds
--   Conditional Proportional Hazards - Static-Stirling time: 3.74
+-   Conditional Proportional Hazards - Recursive-*Ω* time: 16.54 seconds
+-   Conditional Proportional Hazards - Static-Stirling time: 3.99
     seconds
 
 Static-Stirling is faster. Also provided the same likelihood:
@@ -396,8 +396,8 @@ mphz_stirling_time <- end_time - start_time
 
 ### Compare the two closed forms
 
--   Conditional Proportional Hazards - Recursive-*Ω* time: 14.73 seconds
--   Marginal Proportional Hazards - Static-Stirling time: 3.43 seconds
+-   Conditional Proportional Hazards - Recursive-*Ω* time: 16.54 seconds
+-   Marginal Proportional Hazards - Static-Stirling time: 2.95 seconds
 
 Static-Stirling is faster. Also provided the same likelihood:
 
@@ -574,8 +574,8 @@ caft_stirling_time <- end_time - start_time
 
 ### Compare the two closed forms
 
--   Conditional Proportional Hazards - Recursive-*Ω* time: 14.73 seconds
--   Conditional Acceleration Factor - Static-Stirling time: 1.22 seconds
+-   Conditional Proportional Hazards - Recursive-*Ω* time: 16.54 seconds
+-   Conditional Acceleration Factor - Static-Stirling time: 1.23 seconds
 
 Static-Stirling is faster. Also provided the same likelihood:
 
@@ -755,7 +755,7 @@ maft_stirling_time <- end_time - start_time
 
 ### Compare the two closed forms
 
--   Conditional Proportional Hazards - Recursive-*Ω* time: 14.73 seconds
+-   Conditional Proportional Hazards - Recursive-*Ω* time: 16.54 seconds
 -   Marginal Acceleration Factor - Static-Stirling time: 1.23 seconds
 
 Static-Stirling is faster. Also provided the same likelihood:
@@ -1218,27 +1218,27 @@ MSE_underlying_frailty
 MSE_baseline_hazard_shape 
 ```
 
-    ##                       method 1000_stable_0 1000_stable_1 1000_stable_3
-    ## 1:           static-stirling        0.0053        0.0031        0.0634
-    ## 2:      rcpp-recursive-omega        0.0053        0.0031        0.0634
-    ## 3: sourcecpp-recursive-omega        0.0053        0.0031        0.0634
-    ## 4:     parfm_recursive_omega        0.0053        0.0031        0.0733
-    ## 5:       parfm_weibull_gamma        0.0069        0.0069        0.0750
-    ## 6:   parfm_weibull_lognormal        0.0103        0.0046           NaN
-    ## 7:           coxme-lognormal        0.0094        0.0046        0.0217
+    ##                       Method Unimodal Decreasing Bathtub
+    ## 1:           static-stirling   0.0053     0.0031  0.0634
+    ## 2:      rcpp-recursive-omega   0.0053     0.0031  0.0634
+    ## 3: sourcecpp-recursive-omega   0.0053     0.0031  0.0634
+    ## 4:     parfm_recursive_omega   0.0053     0.0031  0.0733
+    ## 5:       parfm_weibull_gamma   0.0069     0.0069  0.0750
+    ## 6:   parfm_weibull_lognormal   0.0103     0.0046     NaN
+    ## 7:           coxme-lognormal   0.0094     0.0046  0.0217
 
 ``` r
 MSE_sample_size
 ```
 
-    ##                       method 10_stable_1 100_stable_1 1000_stable_1
-    ## 1:           static-stirling      0.3929       0.0298        0.0031
-    ## 2:      rcpp-recursive-omega      0.3928       0.0298        0.0031
-    ## 3: sourcecpp-recursive-omega      0.3928       0.0298        0.0031
-    ## 4:     parfm_recursive_omega      0.4861       0.0298        0.0031
-    ## 5:       parfm_weibull_gamma      3.6875       0.0456        0.0069
-    ## 6:   parfm_weibull_lognormal      0.8635       0.0432        0.0046
-    ## 7:           coxme-lognormal      0.6069       0.0463        0.0046
+    ##                       Method   n=10  n=100 n=1000
+    ## 1:           static-stirling 0.3929 0.0298 0.0031
+    ## 2:      rcpp-recursive-omega 0.3928 0.0298 0.0031
+    ## 3: sourcecpp-recursive-omega 0.3928 0.0298 0.0031
+    ## 4:     parfm_recursive_omega 0.4861 0.0298 0.0031
+    ## 5:       parfm_weibull_gamma 3.6875 0.0456 0.0069
+    ## 6:   parfm_weibull_lognormal 0.8635 0.0432 0.0046
+    ## 7:           coxme-lognormal 0.6069 0.0463 0.0046
 
 #### 95% CI Coverage
 
@@ -1259,24 +1259,24 @@ CI_coverage_underlying_frailty
 CI_coverage_baseline_hazard_shape 
 ```
 
-    ##                       method 1000_stable_0 1000_stable_1 1000_stable_3
-    ## 1:           static-stirling        0.9080        0.9349        0.0000
-    ## 2:      rcpp-recursive-omega        0.9080        0.9349        0.0000
-    ## 3: sourcecpp-recursive-omega        0.9080        0.9349        0.0000
-    ## 4:     parfm_recursive_omega        0.9079        0.9348        0.0000
-    ## 5:       parfm_weibull_gamma        0.8840        0.7960        0.0000
-    ## 6:   parfm_weibull_lognormal        0.8723        0.9264           NaN
-    ## 7:           coxme-lognormal        0.8874        0.9452        0.1504
+    ##                       Method Unimodal Decreasing Bathtub
+    ## 1:           static-stirling   0.9080     0.9349  0.0000
+    ## 2:      rcpp-recursive-omega   0.9080     0.9349  0.0000
+    ## 3: sourcecpp-recursive-omega   0.9080     0.9349  0.0000
+    ## 4:     parfm_recursive_omega   0.9079     0.9348  0.0000
+    ## 5:       parfm_weibull_gamma   0.8840     0.7960  0.0000
+    ## 6:   parfm_weibull_lognormal   0.8723     0.9264     NaN
+    ## 7:           coxme-lognormal   0.8874     0.9452  0.1504
 
 ``` r
 CI_coverage_sample_size
 ```
 
-    ##                       method 10_stable_1 100_stable_1 1000_stable_1
-    ## 1:           static-stirling      0.9186       0.9409        0.9349
-    ## 2:      rcpp-recursive-omega      0.9186       0.9409        0.9349
-    ## 3: sourcecpp-recursive-omega      0.9186       0.9409        0.9349
-    ## 4:     parfm_recursive_omega      0.9041       0.9407        0.9348
-    ## 5:       parfm_weibull_gamma      0.8911       0.8997        0.7960
-    ## 6:   parfm_weibull_lognormal      0.9310       0.9390        0.9264
-    ## 7:           coxme-lognormal      0.9223       0.9414        0.9452
+    ##                       Method   n=10  n=100 n=1000
+    ## 1:           static-stirling 0.9186 0.9409 0.9349
+    ## 2:      rcpp-recursive-omega 0.9186 0.9409 0.9349
+    ## 3: sourcecpp-recursive-omega 0.9186 0.9409 0.9349
+    ## 4:     parfm_recursive_omega 0.9041 0.9407 0.9348
+    ## 5:       parfm_weibull_gamma 0.8911 0.8997 0.7960
+    ## 6:   parfm_weibull_lognormal 0.9310 0.9390 0.9264
+    ## 7:           coxme-lognormal 0.9223 0.9414 0.9452
