@@ -23,6 +23,8 @@ Supplementary Materials to Swihart & Bandyopadhyay (2021)
     -   [Q: How did you make Figure 1?](#q-how-did-you-make-figure-1)
     -   [Q: What would a Figure 1 look like on real
         data?](#q-what-would-a-figure-1-look-like-on-real-data)
+    -   [Q: What were the full simulation
+        results?](#q-what-were-the-full-simulation-results)
 
 **Note: the dataset in this repo is a subset of the one used in the
 paper. Please contact Dipankar Bandyopadhyay (<Bandyop@vcuhealth.org>)
@@ -163,8 +165,8 @@ cphz_stirling_time <- end_time - start_time
 
 ### Compare the two closed forms
 
--   Conditional Proportional Hazards - Recursive-*Ω* time: 13.15 seconds
--   Conditional Proportional Hazards - Static-Stirling time: 3.71
+-   Conditional Proportional Hazards - Recursive-*Ω* time: 14.55 seconds
+-   Conditional Proportional Hazards - Static-Stirling time: 3.48
     seconds
 
 Static-Stirling is faster. Also provided the same likelihood:
@@ -394,8 +396,8 @@ mphz_stirling_time <- end_time - start_time
 
 ### Compare the two closed forms
 
--   Conditional Proportional Hazards - Recursive-*Ω* time: 13.15 seconds
--   Marginal Proportional Hazards - Static-Stirling time: 3.08 seconds
+-   Conditional Proportional Hazards - Recursive-*Ω* time: 14.55 seconds
+-   Marginal Proportional Hazards - Static-Stirling time: 2.93 seconds
 
 Static-Stirling is faster. Also provided the same likelihood:
 
@@ -572,8 +574,8 @@ caft_stirling_time <- end_time - start_time
 
 ### Compare the two closed forms
 
--   Conditional Proportional Hazards - Recursive-*Ω* time: 13.15 seconds
--   Conditional Acceleration Factor - Static-Stirling time: 1.20 seconds
+-   Conditional Proportional Hazards - Recursive-*Ω* time: 14.55 seconds
+-   Conditional Acceleration Factor - Static-Stirling time: 1.07 seconds
 
 Static-Stirling is faster. Also provided the same likelihood:
 
@@ -753,8 +755,8 @@ maft_stirling_time <- end_time - start_time
 
 ### Compare the two closed forms
 
--   Conditional Proportional Hazards - Recursive-*Ω* time: 13.15 seconds
--   Marginal Acceleration Factor - Static-Stirling time: 1.30 seconds
+-   Conditional Proportional Hazards - Recursive-*Ω* time: 14.55 seconds
+-   Marginal Acceleration Factor - Static-Stirling time: 1.11 seconds
 
 Static-Stirling is faster. Also provided the same likelihood:
 
@@ -1185,8 +1187,9 @@ like this:
     # of the height of one plot (via rel_heights).
     cowplot::plot_grid(p2x2, legend_b, ncol = 1, rel_heights = c(1, .1))
 
-![](README_files/figure-gfm/unnamed-chunk-23-1.png)<!-- --> \#\#\# Q:
-What were the full simulation results?
+![](README_files/figure-gfm/unnamed-chunk-23-1.png)<!-- -->
+
+### Q: What were the full simulation results?
 
 For more background on the Q parameter and generalized gamma (among
 other great info):
@@ -1199,7 +1202,7 @@ other great info):
 #### MSE
 
 ``` r
-uf_mse
+MSE_underlying_frailty
 ```
 
     ##                       method 1000_gamma_1 1000_lognormal_1 1000_stable_1
@@ -1212,7 +1215,7 @@ uf_mse
     ## 7:           coxme-lognormal       0.0050           0.0052        0.0046
 
 ``` r
-Q_mse
+MSE_baseline_hazard_shape 
 ```
 
     ##                       method 1000_stable_0 1000_stable_1 1000_stable_3
@@ -1225,7 +1228,7 @@ Q_mse
     ## 7:           coxme-lognormal        0.0094        0.0046        0.0217
 
 ``` r
-samp_mse
+MSE_sample_size
 ```
 
     ##                       method 10_stable_1 100_stable_1 1000_stable_1
@@ -1236,3 +1239,44 @@ samp_mse
     ## 5:       parfm_weibull_gamma      3.6875       0.0456        0.0069
     ## 6:   parfm_weibull_lognormal      0.8635       0.0432        0.0046
     ## 7:           coxme-lognormal      0.6069       0.0463        0.0046
+
+#### 95% CI Coverage
+
+``` r
+CI_coverage_underlying_frailty
+```
+
+    ##                       method 1000_gamma_1 1000_lognormal_1 1000_stable_1
+    ## 1:           static-stirling       0.8175           0.8762        0.9349
+    ## 2:      rcpp-recursive-omega       0.8175           0.8762        0.9349
+    ## 3: sourcecpp-recursive-omega       0.8175           0.8762        0.9349
+    ## 4:     parfm_recursive_omega       0.8174           0.8762        0.9348
+    ## 5:       parfm_weibull_gamma       0.9439           0.9204        0.7960
+    ## 6:   parfm_weibull_lognormal       0.9415           0.9419        0.9264
+    ## 7:           coxme-lognormal       0.9412           0.9433        0.9452
+
+``` r
+CI_coverage_baseline_hazard_shape 
+```
+
+    ##                       method 1000_stable_0 1000_stable_1 1000_stable_3
+    ## 1:           static-stirling        0.9080        0.9349        0.0000
+    ## 2:      rcpp-recursive-omega        0.9080        0.9349        0.0000
+    ## 3: sourcecpp-recursive-omega        0.9080        0.9349        0.0000
+    ## 4:     parfm_recursive_omega        0.9079        0.9348        0.0000
+    ## 5:       parfm_weibull_gamma        0.8840        0.7960        0.0000
+    ## 6:   parfm_weibull_lognormal        0.8723        0.9264           NaN
+    ## 7:           coxme-lognormal        0.8874        0.9452        0.1504
+
+``` r
+CI_coverage_sample_size
+```
+
+    ##                       method 10_stable_1 100_stable_1 1000_stable_1
+    ## 1:           static-stirling      0.9186       0.9409        0.9349
+    ## 2:      rcpp-recursive-omega      0.9186       0.9409        0.9349
+    ## 3: sourcecpp-recursive-omega      0.9186       0.9409        0.9349
+    ## 4:     parfm_recursive_omega      0.9041       0.9407        0.9348
+    ## 5:       parfm_weibull_gamma      0.8911       0.8997        0.7960
+    ## 6:   parfm_weibull_lognormal      0.9310       0.9390        0.9264
+    ## 7:           coxme-lognormal      0.9223       0.9414        0.9452
