@@ -23,8 +23,6 @@ Supplementary Materials to Swihart & Bandyopadhyay (2021)
     -   [Q: How did you make Figure 1?](#q-how-did-you-make-figure-1)
     -   [Q: What would a Figure 1 look like on real
         data?](#q-what-would-a-figure-1-look-like-on-real-data)
-    -   [Q: What were the full simulation
-        results?](#q-what-were-the-full-simulation-results)
 
 **Note: the dataset in this repo is a subset of the one used in the
 paper. Please contact Dipankar Bandyopadhyay (<Bandyop@vcuhealth.org>)
@@ -165,8 +163,8 @@ cphz_stirling_time <- end_time - start_time
 
 ### Compare the two closed forms
 
--   Conditional Proportional Hazards - Recursive-*Ω* time: 13.09 seconds
--   Conditional Proportional Hazards - Static-Stirling time: 3.46
+-   Conditional Proportional Hazards - Recursive-*Ω* time: 13.15 seconds
+-   Conditional Proportional Hazards - Static-Stirling time: 3.71
     seconds
 
 Static-Stirling is faster. Also provided the same likelihood:
@@ -396,8 +394,8 @@ mphz_stirling_time <- end_time - start_time
 
 ### Compare the two closed forms
 
--   Conditional Proportional Hazards - Recursive-*Ω* time: 13.09 seconds
--   Marginal Proportional Hazards - Static-Stirling time: 2.79 seconds
+-   Conditional Proportional Hazards - Recursive-*Ω* time: 13.15 seconds
+-   Marginal Proportional Hazards - Static-Stirling time: 3.08 seconds
 
 Static-Stirling is faster. Also provided the same likelihood:
 
@@ -574,8 +572,8 @@ caft_stirling_time <- end_time - start_time
 
 ### Compare the two closed forms
 
--   Conditional Proportional Hazards - Recursive-*Ω* time: 13.09 seconds
--   Conditional Acceleration Factor - Static-Stirling time: 1.03 seconds
+-   Conditional Proportional Hazards - Recursive-*Ω* time: 13.15 seconds
+-   Conditional Acceleration Factor - Static-Stirling time: 1.20 seconds
 
 Static-Stirling is faster. Also provided the same likelihood:
 
@@ -755,8 +753,8 @@ maft_stirling_time <- end_time - start_time
 
 ### Compare the two closed forms
 
--   Conditional Proportional Hazards - Recursive-*Ω* time: 13.09 seconds
--   Marginal Acceleration Factor - Static-Stirling time: 1.05 seconds
+-   Conditional Proportional Hazards - Recursive-*Ω* time: 13.15 seconds
+-   Marginal Acceleration Factor - Static-Stirling time: 1.30 seconds
 
 Static-Stirling is faster. Also provided the same likelihood:
 
@@ -1187,7 +1185,8 @@ like this:
     # of the height of one plot (via rel_heights).
     cowplot::plot_grid(p2x2, legend_b, ncol = 1, rel_heights = c(1, .1))
 
-### Q: What were the full simulation results?
+![](README_files/figure-gfm/unnamed-chunk-23-1.png)<!-- --> \#\#\# Q:
+What were the full simulation results?
 
 For more background on the Q parameter and generalized gamma (among
 other great info):
