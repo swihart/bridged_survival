@@ -165,8 +165,8 @@ cphz_stirling_time <- end_time - start_time
 
 ### Compare the two closed forms
 
--   Conditional Proportional Hazards - Recursive-*Ω* time: 16.54 seconds
--   Conditional Proportional Hazards - Static-Stirling time: 3.99
+-   Conditional Proportional Hazards - Recursive-*Ω* time: 14.79 seconds
+-   Conditional Proportional Hazards - Static-Stirling time: 3.62
     seconds
 
 Static-Stirling is faster. Also provided the same likelihood:
@@ -396,8 +396,8 @@ mphz_stirling_time <- end_time - start_time
 
 ### Compare the two closed forms
 
--   Conditional Proportional Hazards - Recursive-*Ω* time: 16.54 seconds
--   Marginal Proportional Hazards - Static-Stirling time: 2.95 seconds
+-   Conditional Proportional Hazards - Recursive-*Ω* time: 14.79 seconds
+-   Marginal Proportional Hazards - Static-Stirling time: 2.93 seconds
 
 Static-Stirling is faster. Also provided the same likelihood:
 
@@ -574,8 +574,8 @@ caft_stirling_time <- end_time - start_time
 
 ### Compare the two closed forms
 
--   Conditional Proportional Hazards - Recursive-*Ω* time: 16.54 seconds
--   Conditional Acceleration Factor - Static-Stirling time: 1.23 seconds
+-   Conditional Proportional Hazards - Recursive-*Ω* time: 14.79 seconds
+-   Conditional Acceleration Factor - Static-Stirling time: 1.07 seconds
 
 Static-Stirling is faster. Also provided the same likelihood:
 
@@ -755,8 +755,8 @@ maft_stirling_time <- end_time - start_time
 
 ### Compare the two closed forms
 
--   Conditional Proportional Hazards - Recursive-*Ω* time: 16.54 seconds
--   Marginal Acceleration Factor - Static-Stirling time: 1.23 seconds
+-   Conditional Proportional Hazards - Recursive-*Ω* time: 14.79 seconds
+-   Marginal Acceleration Factor - Static-Stirling time: 1.16 seconds
 
 Static-Stirling is faster. Also provided the same likelihood:
 
@@ -1280,3 +1280,126 @@ CI_coverage_sample_size
     ## 5:       parfm_weibull_gamma 0.8911 0.8997 0.7960
     ## 6:   parfm_weibull_lognormal 0.9310 0.9390 0.9264
     ## 7:           coxme-lognormal 0.9223 0.9414 0.9452
+
+#### AVG 95% CI Width
+
+``` r
+CI_width_underlying_frailty
+```
+
+    ##                       Method  Gamma Lognormal     PS
+    ## 1:           static-stirling 0.2684    0.2637 0.2064
+    ## 2:      rcpp-recursive-omega 0.2684    0.2637 0.2064
+    ## 3: sourcecpp-recursive-omega 0.2684    0.2637 0.2064
+    ## 4:     parfm_recursive_omega 0.2684    0.2637 0.2064
+    ## 5:       parfm_weibull_gamma 0.2614    0.2669 0.2166
+    ## 6:   parfm_weibull_lognormal 0.2673    0.2755 0.2446
+    ## 7:           coxme-lognormal 0.2657    0.2765 0.2578
+
+``` r
+CI_width_baseline_hazard_shape 
+```
+
+    ##                       Method Unimodal Decreasing Bathtub
+    ## 1:           static-stirling   0.2424     0.2064  0.1563
+    ## 2:      rcpp-recursive-omega   0.2424     0.2064  0.1563
+    ## 3: sourcecpp-recursive-omega   0.2424     0.2064  0.1563
+    ## 4:     parfm_recursive_omega   0.2424     0.2064  0.1296
+    ## 5:       parfm_weibull_gamma   0.2605     0.2166  0.1265
+    ## 6:   parfm_weibull_lognormal   0.3083     0.2446     NaN
+    ## 7:           coxme-lognormal   0.3096     0.2578  0.1816
+
+``` r
+CI_width_sample_size
+```
+
+    ##                       Method    n=10  n=100 n=1000
+    ## 1:           static-stirling  2.2176 0.6556 0.2064
+    ## 2:      rcpp-recursive-omega  2.2176 0.6556 0.2064
+    ## 3: sourcecpp-recursive-omega  2.2176 0.6556 0.2064
+    ## 4:     parfm_recursive_omega     Inf 0.6554 0.2064
+    ## 5:       parfm_weibull_gamma     Inf 0.6967 0.2166
+    ## 6:   parfm_weibull_lognormal     Inf 0.7771 0.2446
+    ## 7:           coxme-lognormal 23.2057 0.8185 0.2578
+
+#### AVG Run-Time (secs)
+
+``` r
+avg_runtime_underlying_frailty
+```
+
+    ##                       Method   Gamma Lognormal      PS
+    ## 1:           static-stirling  3.8670    4.0036  4.0214
+    ## 2:      rcpp-recursive-omega  5.1812    5.2402  5.2875
+    ## 3: sourcecpp-recursive-omega 12.1920   12.1932 12.3400
+    ## 4:     parfm_recursive_omega 39.3799   37.5591 38.8391
+    ## 5:       parfm_weibull_gamma 41.3771   38.9062 39.7001
+    ## 6:   parfm_weibull_lognormal 48.7776   46.8585 47.9661
+    ## 7:           coxme-lognormal  0.7484    0.7436  0.8629
+
+``` r
+avg_runtime_baseline_hazard_shape 
+```
+
+    ##                       Method Unimodal Decreasing Bathtub
+    ## 1:           static-stirling   3.3293     4.0214  5.1161
+    ## 2:      rcpp-recursive-omega   4.2049     5.2875  6.4687
+    ## 3: sourcecpp-recursive-omega  11.1002    12.3400 13.8164
+    ## 4:     parfm_recursive_omega  36.9459    38.8391 39.6188
+    ## 5:       parfm_weibull_gamma  37.5914    39.7001 27.5676
+    ## 6:   parfm_weibull_lognormal  45.4031    47.9661     NaN
+    ## 7:           coxme-lognormal   0.7442     0.8629  1.1719
+
+``` r
+avg_runtime_sample_size
+```
+
+    ##                       Method   n=10  n=100  n=1000
+    ## 1:           static-stirling 0.2915 0.6524  4.0214
+    ## 2:      rcpp-recursive-omega 0.2742 0.7466  5.2875
+    ## 3: sourcecpp-recursive-omega 8.9851 7.7769 12.3400
+    ## 4:     parfm_recursive_omega 2.1268 5.2631 38.8391
+    ## 5:       parfm_weibull_gamma 2.0242 5.1838 39.7001
+    ## 6:   parfm_weibull_lognormal 1.9143 5.7444 47.9661
+    ## 7:           coxme-lognormal 0.1752 0.1824  0.8629
+
+#### Error Counts
+
+``` r
+error_counts_underlying_frailty
+```
+
+    ##                       Method Gamma Lognormal PS
+    ## 1:           static-stirling     0         0  0
+    ## 2:      rcpp-recursive-omega     0         0  0
+    ## 3: sourcecpp-recursive-omega     0         0  0
+    ## 4:     parfm_recursive_omega     0         0  0
+    ## 5:       parfm_weibull_gamma     0         0  0
+    ## 6:   parfm_weibull_lognormal     0         0  0
+    ## 7:           coxme-lognormal     0         0  0
+
+``` r
+error_counts_baseline_hazard_shape 
+```
+
+    ##                       Method Unimodal Decreasing Bathtub
+    ## 1:           static-stirling        0          0       0
+    ## 2:      rcpp-recursive-omega        0          0       0
+    ## 3: sourcecpp-recursive-omega        0          0       0
+    ## 4:     parfm_recursive_omega        0          0      36
+    ## 5:       parfm_weibull_gamma        0          0     220
+    ## 6:   parfm_weibull_lognormal        0          0   10000
+    ## 7:           coxme-lognormal        0          0       0
+
+``` r
+error_counts_sample_size
+```
+
+    ##                       Method n=10 n=100 n=1000
+    ## 1:           static-stirling  175    22      0
+    ## 2:      rcpp-recursive-omega  174    22      0
+    ## 3: sourcecpp-recursive-omega  174    22      0
+    ## 4:     parfm_recursive_omega    0     0      0
+    ## 5:       parfm_weibull_gamma   32     0      0
+    ## 6:   parfm_weibull_lognormal 1669     0      0
+    ## 7:           coxme-lognormal   24     0      0
