@@ -165,8 +165,8 @@ cphz_stirling_time <- end_time - start_time
 
 ### Compare the two closed forms
 
--   Conditional Proportional Hazards - Recursive-*Ω* time: 14.55 seconds
--   Conditional Proportional Hazards - Static-Stirling time: 3.48
+-   Conditional Proportional Hazards - Recursive-*Ω* time: 14.73 seconds
+-   Conditional Proportional Hazards - Static-Stirling time: 3.74
     seconds
 
 Static-Stirling is faster. Also provided the same likelihood:
@@ -396,8 +396,8 @@ mphz_stirling_time <- end_time - start_time
 
 ### Compare the two closed forms
 
--   Conditional Proportional Hazards - Recursive-*Ω* time: 14.55 seconds
--   Marginal Proportional Hazards - Static-Stirling time: 2.93 seconds
+-   Conditional Proportional Hazards - Recursive-*Ω* time: 14.73 seconds
+-   Marginal Proportional Hazards - Static-Stirling time: 3.43 seconds
 
 Static-Stirling is faster. Also provided the same likelihood:
 
@@ -574,8 +574,8 @@ caft_stirling_time <- end_time - start_time
 
 ### Compare the two closed forms
 
--   Conditional Proportional Hazards - Recursive-*Ω* time: 14.55 seconds
--   Conditional Acceleration Factor - Static-Stirling time: 1.07 seconds
+-   Conditional Proportional Hazards - Recursive-*Ω* time: 14.73 seconds
+-   Conditional Acceleration Factor - Static-Stirling time: 1.22 seconds
 
 Static-Stirling is faster. Also provided the same likelihood:
 
@@ -755,8 +755,8 @@ maft_stirling_time <- end_time - start_time
 
 ### Compare the two closed forms
 
--   Conditional Proportional Hazards - Recursive-*Ω* time: 14.55 seconds
--   Marginal Acceleration Factor - Static-Stirling time: 1.11 seconds
+-   Conditional Proportional Hazards - Recursive-*Ω* time: 14.73 seconds
+-   Marginal Acceleration Factor - Static-Stirling time: 1.23 seconds
 
 Static-Stirling is faster. Also provided the same likelihood:
 
@@ -1205,14 +1205,14 @@ other great info):
 MSE_underlying_frailty
 ```
 
-    ##                       method 1000_gamma_1 1000_lognormal_1 1000_stable_1
-    ## 1:           static-stirling       0.0099           0.0072        0.0031
-    ## 2:      rcpp-recursive-omega       0.0099           0.0072        0.0031
-    ## 3: sourcecpp-recursive-omega       0.0099           0.0072        0.0031
-    ## 4:     parfm_recursive_omega       0.0099           0.0072        0.0031
-    ## 5:       parfm_weibull_gamma       0.0046           0.0058        0.0069
-    ## 6:   parfm_weibull_lognormal       0.0051           0.0052        0.0046
-    ## 7:           coxme-lognormal       0.0050           0.0052        0.0046
+    ##                       Method  Gamma Lognormal     PS
+    ## 1:           static-stirling 0.0099    0.0072 0.0031
+    ## 2:      rcpp-recursive-omega 0.0099    0.0072 0.0031
+    ## 3: sourcecpp-recursive-omega 0.0099    0.0072 0.0031
+    ## 4:     parfm_recursive_omega 0.0099    0.0072 0.0031
+    ## 5:       parfm_weibull_gamma 0.0046    0.0058 0.0069
+    ## 6:   parfm_weibull_lognormal 0.0051    0.0052 0.0046
+    ## 7:           coxme-lognormal 0.0050    0.0052 0.0046
 
 ``` r
 MSE_baseline_hazard_shape 
@@ -1246,14 +1246,14 @@ MSE_sample_size
 CI_coverage_underlying_frailty
 ```
 
-    ##                       method 1000_gamma_1 1000_lognormal_1 1000_stable_1
-    ## 1:           static-stirling       0.8175           0.8762        0.9349
-    ## 2:      rcpp-recursive-omega       0.8175           0.8762        0.9349
-    ## 3: sourcecpp-recursive-omega       0.8175           0.8762        0.9349
-    ## 4:     parfm_recursive_omega       0.8174           0.8762        0.9348
-    ## 5:       parfm_weibull_gamma       0.9439           0.9204        0.7960
-    ## 6:   parfm_weibull_lognormal       0.9415           0.9419        0.9264
-    ## 7:           coxme-lognormal       0.9412           0.9433        0.9452
+    ##                       Method  Gamma Lognormal     PS
+    ## 1:           static-stirling 0.8175    0.8762 0.9349
+    ## 2:      rcpp-recursive-omega 0.8175    0.8762 0.9349
+    ## 3: sourcecpp-recursive-omega 0.8175    0.8762 0.9349
+    ## 4:     parfm_recursive_omega 0.8174    0.8762 0.9348
+    ## 5:       parfm_weibull_gamma 0.9439    0.9204 0.7960
+    ## 6:   parfm_weibull_lognormal 0.9415    0.9419 0.9264
+    ## 7:           coxme-lognormal 0.9412    0.9433 0.9452
 
 ``` r
 CI_coverage_baseline_hazard_shape 
