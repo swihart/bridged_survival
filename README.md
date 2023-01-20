@@ -1,3 +1,5 @@
+Paper:  [Swihart & Bandyopadhyay (2021)](https://www.sciencedirect.com/science/article/pii/S0169260721001905?casa_token=xYzQZ9UfxGMAAAAA:vFpj08P43bUx_7BTN21cSUksK_WSyQdjIBhWHS7VG8u5ctGB91gDzE8-NJtMblcut67jD6k)
+
 Supplementary Materials to Swihart & Bandyopadhyay (2021)
 ================
 
